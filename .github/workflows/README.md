@@ -1,0 +1,1 @@
+Workflow from [this guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
