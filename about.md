@@ -83,9 +83,24 @@ One major difference of Embree is the topology of its AABB-tree.
 Embree provides an "N-Way Tree", where each node contains N children, rather than only 2.
 N is typically set to the size of the CPU's SIMD registers, so that intersection with all children can be done rapidly.
 
+I [modified CGAL's AABB-tree node](https://github.com/JacksonCampolattaro/cgal/blob/n-way-splits/AABB_tree/include/CGAL/internal/AABB_tree/AABB_node.h)
+to allow for more than two children in [a new branch](https://github.com/JacksonCampolattaro/cgal/tree/n-way-splits).
+The process of converting it was simpler than I expected,
+and it came with some positive side effects.
+Making construction and traversal functions generic in regard to N actually simplified a lot of the logic.
+This is where I discovered an optimization that could be made to the tree's topology:
+my changes to the tree incidentally added bounding boxes to the leaf nodes, 
+which further simplified traversal, and had a significant positive effect on performance.
+
+Unfortunately, the higher dimensionality of the tree didn't provide a positive affect without the use of SIMD.
+[todo]()
+
 ### Experimenting with Workarounds
 
 We decided that if we wanted to take advantage of SIMD we would need to find places exactness wasn't necessary.
+My mentor suggested the approach of boxing the queries:
+because intersections between bounding boxes don't require full precision, 
+they could be used to sidestep the issues that make SIMD difficult.
 
 ### Other Techniques used by Embree
 
