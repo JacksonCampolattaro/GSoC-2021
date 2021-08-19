@@ -26,7 +26,7 @@ The AABB-package is only a small part of CGAL,
 so a major part of the value of this project is in the institutional knowledge it produced.
 As such, I documented my work thoroughly [todo](link to wiki).
 
-> ###:Rubric
+> ### Rubric
 > 
 > The target of the link should contain: 
 > - a short description of what work was done, 
