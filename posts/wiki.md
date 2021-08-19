@@ -360,11 +360,9 @@ mw.loader.load(["ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikib
 </ul>
 </div>
 
-<h1><span class="mw-headline" id="Introduction"><span class="mw-headline-number">1</span> Introduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=1" title="Edit section: Introduction">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<p>CGAL’s AABB-Tree is an acceleration structure which speeds up common 
+<h1><span class="mw-headline" id="Introduction"><span class="mw-headline-number">1</span> Introduction</span> <p>CGAL’s AABB-Tree is an acceleration structure which speeds up common 
 tasks such as collision-detection. 
-It is used both directly and throughout other packages in the library, 
-so any performance improvements made to this package will pay dividends 
+It is used both directly and throughout other packages in the library,p;section=1" title="Edit section: Introduction">edit</a> so any performance improvements made to this package will pay dividends 
 elsewhere. 
 The package has already been a major target of performance optimization,
  but one approach that hasn’t yet been fully explored is the use of 
@@ -375,9 +373,7 @@ The introduction of SIMD optimizations to the AABB tree has the
 potential to substantially improve performance by better taking 
 advantage of the capabilities of modern computer processors.
 </p>
-<h1><span class="mw-headline" id="Project_Goals"><span class="mw-headline-number">2</span> Project Goals</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=2" title="Edit section: Project Goals">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<h3><span class="mw-headline" id="Minimum_Viable_Product"><span class="mw-headline-number">2.1</span> Minimum Viable Product</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=3" title="Edit section: Minimum Viable Product">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul>
+<h1><span class="mw-headline" id="Project_Goals"><span class="mw-headline-number">2</span> Project Goals</span> <h3><span class="mw-headline" id="Minimum_Viable_Product"><span class="mw-headline-number">2.1</span> Minimum Viable Product</span> <ul>
 <li> Benchmarks which compare the performance of CGAL’s AABB-tree and 
 other implementations with realistic workloads. This includes benchmarks
  of both intersection and distance query functionality, for a variety of
@@ -390,8 +386,7 @@ other implementations with realistic workloads. This includes benchmarks
 <li> Benchmarks which demonstrate an improvement in performance when SIMD is enabled.
 </li>
 </ul>
-<h3><span class="mw-headline" id="Stretch_Goals"><span class="mw-headline-number">2.2</span> Stretch Goals</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=4" title="Edit section: Stretch Goals">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul>
+<h3><span class="mw-headline" id="Stretch_Goals"><span class="mw-headline-number">2.2</span> Stretch Goals</span> <ul>
 <li> Performance that approaches that of Embree’s Bounding Volume Hierarchy.
 </li>
 <li> Application of similar optimization techniques to other tree 
@@ -399,9 +394,7 @@ packages in CGAL, including the kD-Tree and the Orthtree, the subject of
  my Google Summer of Code assignment in 2020.
 </li>
 </ul>
-<h1><span class="mw-headline" id="Timeline"><span class="mw-headline-number">3</span> Timeline</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=5" title="Edit section: Timeline">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<h3><span class="mw-headline" id="Now_-_June_7"><span class="mw-headline-number">3.1</span> Now - June 7</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=6" title="Edit section: Now - June 7">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p><i>Community Bonding Period</i>
+<h1><span class="mw-headline" id="Timeline"><span class="mw-headline-number">3</span> Timeline</span> <h3><span class="mw-headline" id="Now_-_June_7"><span class="mw-headline-number">3.1</span> Now - June 7</span> <p><i>Community Bonding Period</i>
 </p>
 <ul>
 <li> Learn about the AABB-tree’s functionality as well as its implementation details.
@@ -411,8 +404,7 @@ packages in CGAL, including the kD-Tree and the Orthtree, the subject of
 <li> Select a library for SIMD
 </li>
 </ul>
-<h3><span class="mw-headline" id="June_7_-_June_21"><span class="mw-headline-number">3.2</span> June 7 - June 21</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=7" title="Edit section: June 7 - June 21">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul>
+<h3><span class="mw-headline" id="June_7_-_June_21"><span class="mw-headline-number">3.2</span> June 7 - June 21</span> <ul>
 <li> Collect performance data through profiling using Intel’s VTune
 </li>
 <li> Assemble a table with areas where Embree has the largest performance advantages
@@ -420,15 +412,13 @@ packages in CGAL, including the kD-Tree and the Orthtree, the subject of
 </ul>
 <p>[Benchmark Pull Request Merged]
 </p>
-<h3><span class="mw-headline" id="June_21_-_July_7"><span class="mw-headline-number">3.3</span> June 21 - July 7</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=8" title="Edit section: June 21 - July 7">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul>
+<h3><span class="mw-headline" id="June_21_-_July_7"><span class="mw-headline-number">3.3</span> June 21 - July 7</span> <ul>
 <li> Document optimizations used by Embree
 </li>
 <li> Rank optimizations by expected performance yield, and feasibility with respect to the AABB-tree’s current structure.
 </li>
 </ul>
-<h3><span class="mw-headline" id="July_7_-_July_21"><span class="mw-headline-number">3.4</span> July 7 - July 21</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=9" title="Edit section: July 7 - July 21">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul>
+<h3><span class="mw-headline" id="July_7_-_July_21"><span class="mw-headline-number">3.4</span> July 7 - July 21</span> <ul>
 <li> Apply high-yield optimizations which don’t conflict with AABB-tree’s existing structure.
 </li>
 <li> Apply any optimizations which are self-contained (for example, ones which only require changes to individual functions)
@@ -436,15 +426,13 @@ packages in CGAL, including the kD-Tree and the Orthtree, the subject of
 <li> Benchmark each change, and use unit tests to confirm that no changes conflict with one another
 </li>
 </ul>
-<h3><span class="mw-headline" id="July_21_-_August_7"><span class="mw-headline-number">3.5</span> July 21 - August 7</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=10" title="Edit section: July 21 - August 7">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul>
+<h3><span class="mw-headline" id="July_21_-_August_7"><span class="mw-headline-number">3.5</span> July 21 - August 7</span> <ul>
 <li> Apply high-yield optimizations which may require more invasive changes to AABB-tree’s implementation
 </li>
 <li> Benchmark new changes, repeat integration test
 </li>
 </ul>
-<h3><span class="mw-headline" id="August_7_-_August_14"><span class="mw-headline-number">3.6</span> August 7 - August 14</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=11" title="Edit section: August 7 - August 14">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul>
+<h3><span class="mw-headline" id="August_7_-_August_14"><span class="mw-headline-number">3.6</span> August 7 - August 14</span> <ul>
 <li> Apply any remaining optimizations that only require simple changes to the AABB-tree.
 </li>
 <li> Extend AABB-tree manual to discuss all new optimizations. 
@@ -452,10 +440,7 @@ packages in CGAL, including the kD-Tree and the Orthtree, the subject of
 </ul>
 <p>[Optimization Pull Request Merged]
 </p>
-<h1><span class="mw-headline" id="Progress"><span class="mw-headline-number">4</span> Progress</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=12" title="Edit section: Progress">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<h2><span class="mw-headline" id="May_1_-_May_17"><span class="mw-headline-number">4.1</span> May 1 - May 17</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=13" title="Edit section: May 1 - May 17">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Architectural_Analysis"><span class="mw-headline-number">4.1.1</span> Architectural Analysis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=14" title="Edit section: Architectural Analysis">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p><a href="https://cgal.geometryfactory.com/CGAL/Members/wiki/GSoC2020/Embree" title="GSoC2020/Embree"> Ayush Saraswat's work during GSoC 2020</a> demonstrated a massive performance advantage in favor of Embree (over CGAL's AABB-tree).
+<h1><span class="mw-headline" id="Progress"><span class="mw-headline-number">4</span> Progress</span> <h2><span class="mw-headline" id="May_1_-_May_17"><span class="mw-headline-number">4.1</span> May 1 - May 17</span> <h3><span class="mw-headline" id="Architectural_Analysis"><span class="mw-headline-number">4.1.1</span> Architectural Analysis</span> <p><a href="https://cgal.geometryfactory.com/CGAL/Members/wiki/GSoC2020/Embree" title="GSoC2020/Embree"> Ayush Saraswat's work during GSoC 2020</a> demonstrated a massive performance advantage in favor of Embree (over CGAL's AABB-tree).
 It remains to be seen how much of this advantage comes from SIMD, and how much is architectural.
 </p><p>Pierre Alliez suggested I look at a <a rel="nofollow" class="external text" href="https://diglib.eg.org/handle/10.1111/cgf142662">particular survey</a> of contemporary Bounding Volume Hierarchy design practices.
 The survey discusses a number of features and optimizations which trees might include.
@@ -615,8 +600,7 @@ exactness, and some because of its more elaborate architecture.
 In order to determine where SIMD is making the biggest difference, it's 
 necessary to either quantify or eliminate these other advantages.
 </p>
-<h3><span class="mw-headline" id="Prevalence_of_SIMD_Instructions_in_Existing_Code"><span class="mw-headline-number">4.1.2</span> Prevalence of SIMD Instructions in Existing Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=15" title="Edit section: Prevalence of SIMD Instructions in Existing Code">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Before attempting to introduce SIMD, an important question is how 
+<h3><span class="mw-headline" id="Prevalence_of_SIMD_Instructions_in_Existing_Code"><span class="mw-headline-number">4.1.2</span> Prevalence of SIMD Instructions in Existing Code</span> <p>Before attempting to introduce SIMD, an important question is how 
 much the existing code already takes advantage of vectorized 
 instructions.
 Modern compilers are very adept at vectorizing code that may not appear 
@@ -685,9 +669,7 @@ hardware compatibility).
 Because CGAL is a header-only library, users don't need to accept the 
 same compromise-- they can build with whatever flags they like.
 </p>
-<h2><span class="mw-headline" id="May_18_-_June_1"><span class="mw-headline-number">4.2</span> May 18 - June 1</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=16" title="Edit section: May 18 - June 1">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Examining_Ray-BBox_Intersection"><span class="mw-headline-number">4.2.1</span> Examining Ray-BBox Intersection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=17" title="Edit section: Examining Ray-BBox Intersection">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>According to included comments, CGAL's ray-bbox intersection algorithm is inspired by <a rel="nofollow" class="external text" href="http://people.csail.mit.edu/amy/papers/box-jgt.ps">this paper</a>.
+<h2><span class="mw-headline" id="May_18_-_June_1"><span class="mw-headline-number">4.2</span> May 18 - June 1</span> <h3><span class="mw-headline" id="Examining_Ray-BBox_Intersection"><span class="mw-headline-number">4.2.1</span> Examining Ray-BBox Intersection</span> <p>According to included comments, CGAL's ray-bbox intersection algorithm is inspired by <a rel="nofollow" class="external text" href="http://people.csail.mit.edu/amy/papers/box-jgt.ps">this paper</a>.
 On Pierre's suggestion, I'm exploring how SIMD could be used to accelerate this operation.
 </p><p><i><b>NOTE: Technically this algorithm performs intersections 
 between line segments and bounding boxes, but it can generalize to 
@@ -817,8 +799,7 @@ choose to do something like this if it determines that it results in
 better performance (though I'm not certain that's the case!).
 </p><p>Note: These comments are primarily speculative, based on my understanding of intel's documentation.
 </p>
-<h3><span class="mw-headline" id="Choosing_a_SIMD_Approach"><span class="mw-headline-number">4.2.2</span> Choosing a SIMD Approach</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=18" title="Edit section: Choosing a SIMD Approach">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Note: ISPC is discussed in <a rel="nofollow" class="external text" href="https://pharr.org/matt/blog/2018/04/30/ispc-all">this fantastic blog</a>
+<h3><span class="mw-headline" id="Choosing_a_SIMD_Approach"><span class="mw-headline-number">4.2.2</span> Choosing a SIMD Approach</span> <p>Note: ISPC is discussed in <a rel="nofollow" class="external text" href="https://pharr.org/matt/blog/2018/04/30/ispc-all">this fantastic blog</a>
 </p>
 <table class="wikitable">
 <caption> SIMD Approaches in order of Explicitness
@@ -986,8 +967,7 @@ compiler!
 </ul>
 </td></tr>
 </tbody></table>
-<h4><span class="mw-headline" id="Libraries"><span class="mw-headline-number">4.2.2.1</span> Libraries</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=19" title="Edit section: Libraries">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Libraries"><span class="mw-headline-number">4.2.2.1</span> Libraries</span> <table class="wikitable">
 <tbody><tr>
 <th> Library          </th>
 <th> License           </th>
@@ -1225,16 +1205,13 @@ cross-platform support so Marc Glisse's existing code (but provides no
 convenience layer over intrinsics)
 </li>
 </ul>
-<h3><span class="mw-headline" id="Automated_SIMD_Prevalence_Analysis"><span class="mw-headline-number">4.2.3</span> Automated SIMD Prevalence Analysis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=20" title="Edit section: Automated SIMD Prevalence Analysis">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>The earlier process of determining how many SIMD instructions were present in a binary file was relatively time-consuming.
+<h3><span class="mw-headline" id="Automated_SIMD_Prevalence_Analysis"><span class="mw-headline-number">4.2.3</span> Automated SIMD Prevalence Analysis</span> <p>The earlier process of determining how many SIMD instructions were present in a binary file was relatively time-consuming.
 Because this is something I expect to do frequently in the course of the project, I decided to automate it.
 I created a simple bash script which counts the instructions as I did manually, 
 and also calculates their percents to produce a table like the one shown earlier.
 </p><p>This work is available on a <a rel="nofollow" class="external text" href="https://github.com/JacksonCampolattaro/simd-experiments">new repository</a>, which I intend to use for future such experimentation.
 </p>
-<h2><span class="mw-headline" id="June_2_-_June_7"><span class="mw-headline-number">4.3</span> June 2 - June 7</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=21" title="Edit section: June 2 - June 7">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Ray-BBox_Intersection_Codes"><span class="mw-headline-number">4.3.1</span> Ray-BBox Intersection Codes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=22" title="Edit section: Ray-BBox Intersection Codes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>In order to see how different compiler flags, optimizations, and SIMD
+<h2><span class="mw-headline" id="June_2_-_June_7"><span class="mw-headline-number">4.3</span> June 2 - June 7</span> <h3><span class="mw-headline" id="Ray-BBox_Intersection_Codes"><span class="mw-headline-number">4.3.1</span> Ray-BBox Intersection Codes</span> <p>In order to see how different compiler flags, optimizations, and SIMD
  libraries effect the produced binary and its performance I'm using a 
 minimal test case.
 I assembled a collection of ray-bbox intersection tests for spartan 
@@ -1403,15 +1380,13 @@ but only benchmarks can tell whether that advantage is enough to overcome the la
 </td></tr></tbody></table>
 <p>As I add more implementations, they will be added to this table. 
 </p>
-<h3><span class="mw-headline" id="SIMD_Prevalence_for_Different_Implementations"><span class="mw-headline-number">4.3.2</span> SIMD Prevalence for Different Implementations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=23" title="Edit section: SIMD Prevalence for Different Implementations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>For analysis, the prevalence test was restricted to only the relevant function
+<h3><span class="mw-headline" id="SIMD_Prevalence_for_Different_Implementations"><span class="mw-headline-number">4.3.2</span> SIMD Prevalence for Different Implementations</span> <p>For analysis, the prevalence test was restricted to only the relevant function
 (otherwise the testing framework and its use of the standard library can overwhelm the relevant statistics).
 </p><p>This proved to be the right choice: for example the smits' method
  program contained 1,957 instructions, but only 67 of those make up the 
 intersection function itself! 
 </p>
-<h4><span class="mw-headline" id="Smits.27_Method"><span class="mw-headline-number">4.3.2.1</span> Smits' Method</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=24" title="Edit section: Smits' Method">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Smits.27_Method"><span class="mw-headline-number">4.3.2.1</span> Smits' Method</span> <table class="wikitable">
 <caption> SIMD Instruction Prevalence (<code>-O3</code>)
 </caption>
 <tbody><tr>
@@ -1530,8 +1505,7 @@ With AVX the same tasks are accomplished with conventional instructions.
 Because modern AVX instructions can operate on larger sets of values at a time,
 they should be able to accomplish the same tasks using fewer instructions.
 </p>
-<h4><span class="mw-headline" id="Improved"><span class="mw-headline-number">4.3.2.2</span> Improved</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=25" title="Edit section: Improved">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Improved"><span class="mw-headline-number">4.3.2.2</span> Improved</span> <table class="wikitable">
 <caption> SIMD Instruction Prevalence (<code>-O3</code>)
 </caption>
 <tbody><tr>
@@ -1652,8 +1626,7 @@ It also contains fewer packed SIMD instructions, perhaps due to additional logic
 Though it still has more instructions than the original, more of those instructions are SIMD.
 </p><p>Benchmarks will tell what effect this has on performance.
 </p>
-<h4><span class="mw-headline" id="Clarified"><span class="mw-headline-number">4.3.2.3</span> Clarified</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=26" title="Edit section: Clarified">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Clarified"><span class="mw-headline-number">4.3.2.3</span> Clarified</span> <table class="wikitable">
 <caption> SIMD Instruction Prevalence (<code>-O3</code>)
 </caption>
 <tbody><tr>
@@ -1775,8 +1748,7 @@ The function appears to compiler to the same assembly as its more verbose predec
 </p><p>What remains a mystery is why enabling AVX would cause this,
 as I understand, the <code>-march=native</code> flag only makes new instructions available to the compiler, it shouldn't add any new paths for optimization!
 </p>
-<h4><span class="mw-headline" id="Branchless"><span class="mw-headline-number">4.3.2.4</span> Branchless</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=27" title="Edit section: Branchless">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Branchless"><span class="mw-headline-number">4.3.2.4</span> Branchless</span> <table class="wikitable">
 <caption> SIMD Instruction Prevalence (<code>-O3</code>)
 </caption>
 <tbody><tr>
@@ -1893,9 +1865,7 @@ but any measured advantage would likely be due to reduced branch-mispredictions,
 <p>Based on the previous table, these results aren't surprising:
 the branchless function compiles to very similar assembly vs. the other two equivalent functions, minus some conditional logic!
 </p>
-<h2><span class="mw-headline" id="June_8_-_June_15"><span class="mw-headline-number">4.4</span> June 8 - June 15</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=28" title="Edit section: June 8 - June 15">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Collecting_Test_Data_for_Benchmarking"><span class="mw-headline-number">4.4.1</span> Collecting Test Data for Benchmarking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=29" title="Edit section: Collecting Test Data for Benchmarking">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Andreas, Pierre, and I discussed the challenges of producing 
+<h2><span class="mw-headline" id="June_8_-_June_15"><span class="mw-headline-number">4.4</span> June 8 - June 15</span> <h3><span class="mw-headline" id="Collecting_Test_Data_for_Benchmarking"><span class="mw-headline-number">4.4.1</span> Collecting Test Data for Benchmarking</span> <p>Andreas, Pierre, and I discussed the challenges of producing 
 realistic test data when evaluating the performance of an like the 
 intersection function.
 They proposed extracting scenarios from the tetrahedral remeshing tests,
@@ -1920,8 +1890,7 @@ The format isn't particularly pretty or readable, but it's usable enough for par
 <li> <i><b>Thanks for the advice, enabling full precision data produced a slightly different intersection frequency! <a href="https://cgal.geometryfactory.com/CGAL/Members/wiki/User:Jackson_Campolattaro" title="User:Jackson Campolattaro">Jackson Campolattaro</a> </b></i>
 </li>
 </ul>
-<h3><span class="mw-headline" id="Initial_Benchmark_Results"><span class="mw-headline-number">4.4.2</span> Initial Benchmark Results</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=30" title="Edit section: Initial Benchmark Results">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>I created a simple benchmarking program with a function for timing lambda functions using <code>std::chrono</code>.
+<h3><span class="mw-headline" id="Initial_Benchmark_Results"><span class="mw-headline-number">4.4.2</span> Initial Benchmark Results</span> <p>I created a simple benchmarking program with a function for timing lambda functions using <code>std::chrono</code>.
 Because I'm running this on a laptop, it was important to ensure that 
 later tests wouldn't have a disadvantage because of rising CPU 
 temperatures.
@@ -1992,8 +1961,7 @@ type of synthetic data!)
 </ul>
 <p>Based on lessons learned here, I intend to base future implementations off of the clarified version.
 </p>
-<h3><span class="mw-headline" id="Tweaks_to_Benchmarks"><span class="mw-headline-number">4.4.3</span> Tweaks to Benchmarks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=31" title="Edit section: Tweaks to Benchmarks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>During our Friday meeting, we discussed ways to open up more 
+<h3><span class="mw-headline" id="Tweaks_to_Benchmarks"><span class="mw-headline-number">4.4.3</span> Tweaks to Benchmarks</span> <p>During our Friday meeting, we discussed ways to open up more 
 opportunities for SIMD parallelism in the benchmarks.
 One idea was to take into account the fact that each ray is tested 
 against many bounding boxes.
@@ -2055,8 +2023,7 @@ This simple change produced a massive improvement in performance!
 Accross the board, times are cut by more than 25%.
 This is a rather spectacular difference, considering that no change was made to the functions themselves.
 </p>
-<h3><span class="mw-headline" id="Intersection_using_XSimd"><span class="mw-headline-number">4.4.4</span> Intersection using XSimd</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=32" title="Edit section: Intersection using XSimd">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>I added another intersection test that uses XSimd to implement the 
+<h3><span class="mw-headline" id="Intersection_using_XSimd"><span class="mw-headline-number">4.4.4</span> Intersection using XSimd</span> <p>I added another intersection test that uses XSimd to implement the 
 branchless version with more explicit use of SIMD.
 I chose XSimd because of its better usage semantics than std-simd, but I
  was disappointed to find that its types don't generalize as nicely for 
@@ -2077,8 +2044,7 @@ I get the impression that it's designed for the other type of
 vectorization (parallelism between multiple vectors).
 </p><p><b>NOTE: Future benchmarks will be compiled with <code>-march=native</code> unless otherwise indicated, because XSimd only supports 4-way batches of doubles when they're supported in hardware.</b>
 </p>
-<h3><span class="mw-headline" id="Switching_from_Line_Segments_to_Rays"><span class="mw-headline-number">4.4.5</span> Switching from Line Segments to Rays</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=33" title="Edit section: Switching from Line Segments to Rays">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>The intersection methods I've been working with take bounds arguments <code>t0</code> and <code>t1</code>, meaning that they are actually testing for intersections with line segments, and not rays.
+<h3><span class="mw-headline" id="Switching_from_Line_Segments_to_Rays"><span class="mw-headline-number">4.4.5</span> Switching from Line Segments to Rays</span> <p>The intersection methods I've been working with take bounds arguments <code>t0</code> and <code>t1</code>, meaning that they are actually testing for intersections with line segments, and not rays.
 In all previous benchmarks, I used values of +/- infinity to generalize to infinite rays.
 For future tests I've removed those bounds checks, meaning that the code is now specialized to infinite rays.
 Eliminating the logic came with a corresponding performance advantage.
@@ -2112,8 +2078,7 @@ Eliminating the logic came with a corresponding performance advantage.
 <td> 2.59743e+07 ms
 </td></tr>
 </tbody></table>
-<h3><span class="mw-headline" id="Effects_of_inline"><span class="mw-headline-number">4.4.6</span> Effects of <code>inline</code></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=34" title="Edit section: Effects of inline">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Marking a function inline can increase binary sizes, but it has the 
+<h3><span class="mw-headline" id="Effects_of_inline"><span class="mw-headline-number">4.4.6</span> Effects of <code>inline</code></span> <p>Marking a function inline can increase binary sizes, but it has the 
 benefit of putting each invocation of a function in context.
 This is especially important for autovectorization, because it gives the
  compiler the ability to recognize natural parallelism on a broader 
@@ -2161,9 +2126,7 @@ optimizations can be applied.
 </tbody></table>
 <p>These results leave the question: is this representative of real world usage?
 </p>
-<h2><span class="mw-headline" id="June_16_-_June_22"><span class="mw-headline-number">4.5</span> June 16 - June 22</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=35" title="Edit section: June 16 - June 22">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Restructuring_Benchmarks"><span class="mw-headline-number">4.5.1</span> Restructuring Benchmarks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=36" title="Edit section: Restructuring Benchmarks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>In preparation for creating a new data arrangement, I spent some time cleaning up the simd experimentation code.
+<h2><span class="mw-headline" id="June_16_-_June_22"><span class="mw-headline-number">4.5</span> June 16 - June 22</span> <h3><span class="mw-headline" id="Restructuring_Benchmarks"><span class="mw-headline-number">4.5.1</span> Restructuring Benchmarks</span> <p>In preparation for creating a new data arrangement, I spent some time cleaning up the simd experimentation code.
 The main changes included:
 </p>
 <ul>
@@ -2176,8 +2139,7 @@ The main changes included:
 <li> Results are formatted as a WikiText-syntax table, so that I can paste directly into the wiki.
 </li>
 </ul>
-<h3><span class="mw-headline" id="Validating_benchmarks_for_Correctness"><span class="mw-headline-number">4.5.2</span> Validating benchmarks for Correctness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=37" title="Edit section: Validating benchmarks for Correctness">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>My original approach for catching logic errors in the different 
+<h3><span class="mw-headline" id="Validating_benchmarks_for_Correctness"><span class="mw-headline-number">4.5.2</span> Validating benchmarks for Correctness</span> <p>My original approach for catching logic errors in the different 
 implementations was to watch the hit-rate of their intersection tests;
 this was done by counting the intersections in each benchmark.
 Unfortunately, this doesn't catch "symmetrical" errors, where a logic 
@@ -2187,8 +2149,7 @@ To resolve this, I began saving results into an <code>std::vector&lt;bool&gt;</c
 I actually caught more than one mistake when I added this, but nothing that required additional complexity to fix 
 (the mistakes didn't have performance implications).
 </p>
-<h4><span class="mw-headline" id="Performance_Implications"><span class="mw-headline-number">4.5.2.1</span> Performance Implications</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=38" title="Edit section: Performance Implications">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Unfortunately, adding this validation logic does come with a cost.
+<h4><span class="mw-headline" id="Performance_Implications"><span class="mw-headline-number">4.5.2.1</span> Performance Implications</span> <p>Unfortunately, adding this validation logic does come with a cost.
 Adding each result to the end of the <code>std::vector</code> consumes some time,
 and ultimately this produces significantly slower benchmarks.
 </p>
@@ -2223,8 +2184,7 @@ and ultimately this produces significantly slower benchmarks.
 <p>Luckily because each benchmark is adding the same number of results to the array, the effect is "flat".
 The relative performance of the different methods is left unchanged, and so the same conclusions can be reached.
 </p>
-<h3><span class="mw-headline" id=".22Struct-of-Arrays.22_BBox_type"><span class="mw-headline-number">4.5.3</span> "Struct-of-Arrays" BBox type</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=39" title="Edit section: &quot;Struct-of-Arrays&quot; BBox type">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>A <a rel="nofollow" class="external text" href="https://software.intel.com/content/www/us/en/develop/articles/memory-layout-transformations.html">common approach</a> to improve a program's use of SIMD 
+<h3><span class="mw-headline" id=".22Struct-of-Arrays.22_BBox_type"><span class="mw-headline-number">4.5.3</span> "Struct-of-Arrays" BBox type</span> <p>A <a rel="nofollow" class="external text" href="https://software.intel.com/content/www/us/en/develop/articles/memory-layout-transformations.html">common approach</a> to improve a program's use of SIMD 
 is to arrange the data in a "Struct-of-Arrays" rather than an "Array-of-Structs" format.
 This means that data can be collected into SIMD registers using aligned load operations, rather than a "gather".
 </p><p>For example, a collection of 8 (x, y, z) vectors stored in the AoS format would look like <code>...xyzxyzxyzxyzxyzxyzxyzxyz...</code> in memory;
@@ -2239,8 +2199,7 @@ Arranging data in this way is an optimization that punctures the veil of many hi
 </p><p>The use-case I've been exploring for the intersection function compares each ray to a large number of bounding boxes.
 Because of this, we should be able to apply an SoA philosophy to the boxes only, while keeping the rays AoS.
 </p>
-<h4><span class="mw-headline" id="VBBox"><span class="mw-headline-number">4.5.3.1</span> VBBox</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=40" title="Edit section: VBBox">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>My "Vector-Bounding Box" type extends the <code>BBox&lt;T&gt;</code> type, where <code>T</code> is an <code>std::vector</code>.
+<h4><span class="mw-headline" id="VBBox"><span class="mw-headline-number">4.5.3.1</span> VBBox</span> <p>My "Vector-Bounding Box" type extends the <code>BBox&lt;T&gt;</code> type, where <code>T</code> is an <code>std::vector</code>.
 </p><p>The <code>VBBox</code> has a constructor which takes a vector of 
 scalar bounding boxes and packs their underlying data into vectors.
 The files containing test data are naturally in Array-of-Structs form, 
@@ -2252,8 +2211,7 @@ This is another bounding box, where <code>T</code> is a <code>const T&amp;</code
 Because I'm using STL data structures to hold <code>T</code> inside my classes, I substituted <code>std::reference_wrapper&lt;const T&gt;</code> for <code>const T&amp;</code>.
 With the help of this accessor, I can perform intersection tests on individual boxes in the <code>VBBox</code> without any changes to the scalar intersection code.
 </p>
-<h4><span class="mw-headline" id="Benchmark_Results"><span class="mw-headline-number">4.5.3.2</span> Benchmark Results</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=41" title="Edit section: Benchmark Results">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Benchmark_Results"><span class="mw-headline-number">4.5.3.2</span> Benchmark Results</span> <table class="wikitable">
 <caption> Time to Complete 3742217 Intersection Tests
 </caption>
 <tbody><tr>
@@ -2277,8 +2235,7 @@ both perform worse than the SoA version, while using an equivalent branchless al
 My suspicion is that the new arrangement in memory hurts cache performance,
 which becomes relevant for a computationally-light task like intersection tests.
 </p>
-<h4><span class="mw-headline" id="Relevance_to_Real-life_use"><span class="mw-headline-number">4.5.3.3</span> Relevance to Real-life use</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=42" title="Edit section: Relevance to Real-life use">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Could we use this strategy in CGAL?
+<h4><span class="mw-headline" id="Relevance_to_Real-life_use"><span class="mw-headline-number">4.5.3.3</span> Relevance to Real-life use</span> <p>Could we use this strategy in CGAL?
 Knowing that this approach underperforms perhaps makes this question less relevant, but it's still worth looking at.
 </p><p>I believe this isn't actually an option,
 in order to pack our bounding boxes, we would need to know the relevant 
@@ -2287,8 +2244,7 @@ This is easy for some applications (particularly brute force),
 but to do this in the course of traversing a tree would be tantamount to
  seeing the future.
 </p>
-<h3><span class="mw-headline" id="Caching_Broadcasted_Ray"><span class="mw-headline-number">4.5.4</span> Caching Broadcasted Ray</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=43" title="Edit section: Caching Broadcasted Ray">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Because our intersection compares one ray to several boxes, 
+<h3><span class="mw-headline" id="Caching_Broadcasted_Ray"><span class="mw-headline-number">4.5.4</span> Caching Broadcasted Ray</span> <p>Because our intersection compares one ray to several boxes, 
 there are many places in the code where it's necessary to apply a scalar operation to many elements,
 for example <code>[1.0, 2.0, 3.5, 2.0] * 4.0 = [4.0, 8.0, 14.0, 8.0]</code>.
 In python/numpy terms, this type of elementwise math is known as a 
@@ -2305,8 +2261,7 @@ and the optimizer doesn't appear to notice the repeated loads.
 Whenever we start performing intersections with a new ray, we (manually) broadcast the ray's parameters to xsimd registers.
 These broadcasted values are used for all the relevant intersections.
 </p>
-<h4><span class="mw-headline" id="Benchmark_Results_2"><span class="mw-headline-number">4.5.4.1</span> Benchmark Results</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=44" title="Edit section: Benchmark Results">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Benchmark_Results_2"><span class="mw-headline-number">4.5.4.1</span> Benchmark Results</span> <table class="wikitable">
 <caption> Time to Complete 3742217 Intersection Tests
 </caption>
 <tbody><tr>
@@ -2325,9 +2280,7 @@ These broadcasted values are used for all the relevant intersections.
 <p>This change appears to have produced a modest performance improvement vs performing the broadcast each time.
 The explicit code now outperforms the implicit code by a slightly larger margin.
 </p>
-<h2><span class="mw-headline" id="June_23_-_June_30"><span class="mw-headline-number">4.6</span> June 23 - June 30</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=45" title="Edit section: June 23 - June 30">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id=".22Array_of_Structs_of_Arrays.22_BBox"><span class="mw-headline-number">4.6.1</span> "Array of Structs of Arrays" BBox</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=46" title="Edit section: &quot;Array of Structs of Arrays&quot; BBox">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>In an "AoSoA" arrangement, the values are grouped together into batches, each batch the size of the CPU's SIMD registers.
+<h2><span class="mw-headline" id="June_23_-_June_30"><span class="mw-headline-number">4.6</span> June 23 - June 30</span> <h3><span class="mw-headline" id=".22Array_of_Structs_of_Arrays.22_BBox"><span class="mw-headline-number">4.6.1</span> "Array of Structs of Arrays" BBox</span> <p>In an "AoSoA" arrangement, the values are grouped together into batches, each batch the size of the CPU's SIMD registers.
 On a CPU with 4-way SIMD, data would be arranged like  <code>...xxxxyyyyzzzzxxxxyyyyzzzzxxxxyyyyzzzz...</code> in memory.
 </p><p>This strategy has several advantages:
 </p>
@@ -2363,8 +2316,7 @@ Once the data was packed properly, it became simple to use intersection
 methods I had previously written to process the structure (using 
 explicit or implicit SIMD).
 </p>
-<h4><span class="mw-headline" id="Benchmark_Results_3"><span class="mw-headline-number">4.6.1.1</span> Benchmark Results</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=47" title="Edit section: Benchmark Results">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Benchmark_Results_3"><span class="mw-headline-number">4.6.1.1</span> Benchmark Results</span> <table class="wikitable">
 <caption> Time to Complete 3742217 Intersection Tests (AoSoA Data)
 </caption>
 <tbody><tr>
@@ -2382,9 +2334,7 @@ explicit or implicit SIMD).
 </tbody></table>
 <p>Benchmarking shows that this strategy performs better than the SoA model, but doesn't quite beat the original AoS approach.
 </p>
-<h2><span class="mw-headline" id="July_1_-_July_8"><span class="mw-headline-number">4.7</span> July 1 - July 8</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=48" title="Edit section: July 1 - July 8">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Performing_Benchmarks_on_Deepsat"><span class="mw-headline-number">4.7.1</span> Performing Benchmarks on Deepsat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=49" title="Edit section: Performing Benchmarks on Deepsat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Deepsat is a Xeon server that I and other members of the Inria TITANE
+<h2><span class="mw-headline" id="July_1_-_July_8"><span class="mw-headline-number">4.7</span> July 1 - July 8</span> <h3><span class="mw-headline" id="Performing_Benchmarks_on_Deepsat"><span class="mw-headline-number">4.7.1</span> Performing Benchmarks on Deepsat</span> <p>Deepsat is a Xeon server that I and other members of the Inria TITANE
  team share access to.
 After arriving at the Inria campus, I decided to re-run my benchmarks on
  the machine as a way to build familiarity with the workflow here.
@@ -2400,8 +2350,7 @@ Because my benchmarks contain their own timing and result-reporting
 logic, producing the following tables was as simple as running each in 
 turn.
 </p>
-<h4><span class="mw-headline" id="Results"><span class="mw-headline-number">4.7.1.1</span> Results</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=50" title="Edit section: Results">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<div style="display:inline-table">
+<h4><span class="mw-headline" id="Results"><span class="mw-headline-number">4.7.1.1</span> Results</span> <div style="display:inline-table">
 <table class="wikitable">
 <caption> Time to Complete 3742217 Intersection Tests on AoS Data
 </caption>
@@ -2475,8 +2424,7 @@ Consumer hardware is optimized for single-core speed, and that's an
 advantage for this type of work.
 </p><p>Despite its differences, this data leads us to the same conclusions as previous results.
 </p>
-<h3><span class="mw-headline" id="Experimenting_with_Application_of_OpenMP_Directives"><span class="mw-headline-number">4.7.2</span> Experimenting with Application of OpenMP Directives</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=51" title="Edit section: Experimenting with Application of OpenMP Directives">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>One approach for SIMD that we haven't discussed so far is OpenMP.
+<h3><span class="mw-headline" id="Experimenting_with_Application_of_OpenMP_Directives"><span class="mw-headline-number">4.7.2</span> Experimenting with Application of OpenMP Directives</span> <p>One approach for SIMD that we haven't discussed so far is OpenMP.
 This is because I've been having trouble getting interesting results from it.
 </p><p>Simply put, I've yet to run into a case where adding a <code>#pragma omp ...</code> tag resulted in the compiler making any different choices.
 Adding it to the benchmark code didn't affect performance, so to confirm my suspicions I created <a rel="nofollow" class="external text" href="https://github.com/CGAL/cgal-public-dev/blob/gsoc2021-simd-campolattaro/_simd-experiments/openmp/main.cpp">a simple program</a>
@@ -2518,8 +2466,7 @@ Openmp:  0.571762
 performance; they're small enough that they were likely already 
 effectively inlined by the compiler.
 </p>
-<h3><span class="mw-headline" id="Profiling_Mesh_3_remesh_polyhedral_surface_sm"><span class="mw-headline-number">4.7.3</span> Profiling Mesh_3 <code>remesh_polyhedral_surface_sm</code></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=52" title="Edit section: Profiling Mesh 3 remesh polyhedral surface sm">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>On Andreas' suggestion, I will be using Mesh_3's <code>remesh_polyhedral_surface_sm</code> as a representation of typical usage of the AABB-tree in future tests.
+<h3><span class="mw-headline" id="Profiling_Mesh_3_remesh_polyhedral_surface_sm"><span class="mw-headline-number">4.7.3</span> Profiling Mesh_3 <code>remesh_polyhedral_surface_sm</code></span> <p>On Andreas' suggestion, I will be using Mesh_3's <code>remesh_polyhedral_surface_sm</code> as a representation of typical usage of the AABB-tree in future tests.
 </p><p>I started by using the profiling tool Perf to identify "hot 
 points" in the program.
 This is important, because it helps us determine where our efforts are 
@@ -2539,8 +2486,7 @@ This
 operation is spent just on checking for intersections between rays and 
 bounding boxes, while traversing the tree!
 </p>
-<h3><span class="mw-headline" id="Branchless_do_intersect_bbox_segment_aux"><span class="mw-headline-number">4.7.4</span> Branchless <code>do_intersect_bbox_segment_aux</code></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=53" title="Edit section: Branchless do intersect bbox segment aux">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>The ray-bbox intersection reference implementation has been a good 
+<h3><span class="mw-headline" id="Branchless_do_intersect_bbox_segment_aux"><span class="mw-headline-number">4.7.4</span> Branchless <code>do_intersect_bbox_segment_aux</code></span> <p>The ray-bbox intersection reference implementation has been a good 
 way of experimenting with different ideas and learning about SIMD 
 techniques, but continuing to optimize it encounters diminishing 
 returns.
@@ -2666,8 +2612,7 @@ In any case, the complexity of the kernel's exact floating point type
 means that it's unlikely that this change actually meaningfully 
 increased the use of SIMD.
 </p>
-<h3><span class="mw-headline" id="Meeting_with_Adrien_Cassagne"><span class="mw-headline-number">4.7.5</span> Meeting with Adrien Cassagne</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=54" title="Edit section: Meeting with Adrien Cassagne">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Adrien Cassagne is a researcher elsewhere at Inria with work that makes extensive use of SIMD.
+<h3><span class="mw-headline" id="Meeting_with_Adrien_Cassagne"><span class="mw-headline-number">4.7.5</span> Meeting with Adrien Cassagne</span> <p>Adrien Cassagne is a researcher elsewhere at Inria with work that makes extensive use of SIMD.
 Most relevant is <a rel="nofollow" class="external text" href="https://dl.acm.org/doi/10.1145/3178433.3178435">his paper on MIPP</a>, a custom SIMD wrapper library which he wrote as part of another line of research.
 Pierre contacted Adrien, and was able to schedule a meeting for the 6th of July.
 In preparation for our meeting, I prepared <a rel="nofollow" class="external text" href="https://docs.google.com/presentation/d/1Tl9CtJhZNM4LSBjV_jwz3aBnVMmrMcdCMMWE13NZ4Aw/edit?usp=sharing">a set of slides</a> to explain the problem statement.
@@ -2697,8 +2642,7 @@ In rendering this is as done by casting rays of adjacent pixels, but for
  CGAL it's difficult to think of a relevant use-case. Do any of CGAL's 
 packages have a tendency to perform queries of similar rays?
 </p>
-<h3><span class="mw-headline" id="Branchless_BBox-BBox_Intersection"><span class="mw-headline-number">4.7.6</span> Branchless BBox-BBox Intersection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=55" title="Edit section: Branchless BBox-BBox Intersection">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>CGAL's BBox-BBox intersection function is significantly simpler than Ray-BBox intersection.
+<h3><span class="mw-headline" id="Branchless_BBox-BBox_Intersection"><span class="mw-headline-number">4.7.6</span> Branchless BBox-BBox Intersection</span> <p>CGAL's BBox-BBox intersection function is significantly simpler than Ray-BBox intersection.
 This is because bounding boxes are axis-aligned, so a pair of boxes intersect whenever their x, y, and z bounds all intersect.
 Because all of the comparisons are along axes there isn't any opportunity for accumulated error,
 this means all the math can be done using the <code>double</code> type without any additional logic needed to add margins.
@@ -3047,9 +2991,7 @@ This is related to one of the advantages that a library like xsimd presents:
 it's explicitness means that we can have greater confidence in the structure of the produced assembly,
 without needing to examine it directly.
 </p>
-<h2><span class="mw-headline" id="July_9_-_July_16"><span class="mw-headline-number">4.8</span> July 9 - July 16</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=56" title="Edit section: July 9 - July 16">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Truly_Branchless_do_intersect_bbox_segment_aux"><span class="mw-headline-number">4.8.1</span> <i>Truly</i> Branchless <code>do_intersect_bbox_segment_aux</code></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=57" title="Edit section: Truly Branchless do intersect bbox segment aux">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Earlier I said that the FT type used by the new ray-bbox intersection
+<h2><span class="mw-headline" id="July_9_-_July_16"><span class="mw-headline-number">4.8</span> July 9 - July 16</span> <h3><span class="mw-headline" id="Truly_Branchless_do_intersect_bbox_segment_aux"><span class="mw-headline-number">4.8.1</span> <i>Truly</i> Branchless <code>do_intersect_bbox_segment_aux</code></span> <p>Earlier I said that the FT type used by the new ray-bbox intersection
  function was likely too elaborate to be effectively vectorized.
 Further investigation revealed that in the case of the program I'm using
  as a benchmark, <code>FT</code> is defined as <code>double</code>!
@@ -3331,8 +3273,7 @@ and they're liable to be giving false precision by never returning uncertain res
 Nevertheless, it's useful to have a branchless version of the intersection function,
 and this lets us evaluate the advantages of some approaches that can be combined with it.
 </p>
-<h3><span class="mw-headline" id="Benchmarking_the_Child-Skipping_Optimization"><span class="mw-headline-number">4.8.2</span> Benchmarking the Child-Skipping Optimization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=58" title="Edit section: Benchmarking the Child-Skipping Optimization">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Last month, Andreas <a rel="nofollow" class="external text" href="https://github.com/CGAL/cgal-public-dev/commit/1d2f6e2748c7a34f78fa509159df015d6b348109">experimented with adding a child-skipping optimization</a> to the aabb-tree's traversal code.
+<h3><span class="mw-headline" id="Benchmarking_the_Child-Skipping_Optimization"><span class="mw-headline-number">4.8.2</span> Benchmarking the Child-Skipping Optimization</span> <p>Last month, Andreas <a rel="nofollow" class="external text" href="https://github.com/CGAL/cgal-public-dev/commit/1d2f6e2748c7a34f78fa509159df015d6b348109">experimented with adding a child-skipping optimization</a> to the aabb-tree's traversal code.
 By retrieving the grandchildren of each node, we can compare our bounding boxes in groups of 4 at a time.
 My intention is to examine how the Child-Skipping optimization combines with our branchless intersection code.
 Because the child skipping optimization uses the intersection function with groups of bounding boxes at a time,
@@ -3372,9 +3313,7 @@ value.
 As a result, I'm considering shelving this change and dedicating time to
  examining more straightforward solutions instead.
 </p>
-<h3><span class="mw-headline" id="Preparing_to_implement_N-Way_Splitting"><span class="mw-headline-number">4.8.3</span> Preparing to implement N-Way Splitting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=59" title="Edit section: Preparing to implement N-Way Splitting">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<h4><span class="mw-headline" id="Planning"><span class="mw-headline-number">4.8.3.1</span> Planning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=60" title="Edit section: Planning">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>This list of steps is by no means complete,
+<h3><span class="mw-headline" id="Preparing_to_implement_N-Way_Splitting"><span class="mw-headline-number">4.8.3</span> Preparing to implement N-Way Splitting</span> <h4><span class="mw-headline" id="Planning"><span class="mw-headline-number">4.8.3.1</span> Planning</span> <p>This list of steps is by no means complete,
 it primarily focuses on the member variables the Node type is composed 
 of.
 Each of the changes has implications for the rest of the code, for 
@@ -3440,8 +3379,7 @@ value of 2).
 <li> Break BBoxes into efficiently packed parallel arrays.
 </li>
 </ul>
-<h4><span class="mw-headline" id="Child_Array"><span class="mw-headline-number">4.8.3.2</span> Child Array</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=61" title="Edit section: Child Array">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The first planned change was to replace the independent children with an <code>std::array</code>
+<h4><span class="mw-headline" id="Child_Array"><span class="mw-headline-number">4.8.3.2</span> Child Array</span> <p>The first planned change was to replace the independent children with an <code>std::array</code>
  containing them.
 This change went very quickly, and because the Node class is nicely 
 encapsulated the difference could be accounted for simply by altering 
@@ -3449,15 +3387,13 @@ the accessors.
 I'm using the <code>aabb_any_all_benchmark.cpp</code> test to verify the program, and it actually showed a marginal but consistent improvement in performance! 
 This improvement is around 1% for all kernels used, and may come from <code>std::array</code>'s semantics, (for example, perhaps both children can be initialized to <code>nullptr</code> in a more efficient way).
 </p>
-<h4><span class="mw-headline" id="std::variant_Children"><span class="mw-headline-number">4.8.3.3</span> <code>std::variant</code> Children</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=62" title="Edit section: std::variant Children">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Because CGAL doesn't yet depend on C++17, I substituted <code>boost::variant</code> for <code>std::variant</code>,
+<h4><span class="mw-headline" id="std::variant_Children"><span class="mw-headline-number">4.8.3.3</span> <code>std::variant</code> Children</span> <p>Because CGAL doesn't yet depend on C++17, I substituted <code>boost::variant</code> for <code>std::variant</code>,
 this went almost as smoothly as switching to an array, besides some 
 extra effort to initialize the node with nullptrs of the correct type.
 <code>variant</code> provides some additional safety guarantees, but that comes with a performance penalty;
 the same program runs a little over 1% slower than the original.
 </p>
-<h4><span class="mw-headline" id="Pointer-to-array_replaces_Array-of-pointers"><span class="mw-headline-number">4.8.3.4</span> Pointer-to-array replaces Array-of-pointers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=63" title="Edit section: Pointer-to-array replaces Array-of-pointers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Though not strictly necessary, it seemed prudent to replace my array 
+<h4><span class="mw-headline" id="Pointer-to-array_replaces_Array-of-pointers"><span class="mw-headline-number">4.8.3.4</span> Pointer-to-array replaces Array-of-pointers</span> <p>Though not strictly necessary, it seemed prudent to replace my array 
 of pointers of nodes with a pointer to an array of nodes.
 This could theoretically produce simpler syntax, but more importantly it
  guarantees that nodes with the same parent will be adjacent in memory.
@@ -3481,8 +3417,7 @@ This moves the use of <code>variant</code> into the Node type, reduces pointer c
 </p><p>I expected this to perform worse than previous methods, primarily because the underlying node vector is much more poorly packed.
 My expectations were borne out, as the new code performs nearly 10% worse.
 </p>
-<h4><span class="mw-headline" id="Single-primitive_leaves"><span class="mw-headline-number">4.8.3.5</span> Single-primitive leaves</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=64" title="Edit section: Single-primitive leaves">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>I was expecting this change to be more challenging, because it's a fundamental difference in how the tree is constructed.
+<h4><span class="mw-headline" id="Single-primitive_leaves"><span class="mw-headline-number">4.8.3.5</span> Single-primitive leaves</span> <p>I was expecting this change to be more challenging, because it's a fundamental difference in how the tree is constructed.
 </p><p>In the original tree structure, a node could point to a pair of 
 child nodes (not shown), or a child node and a primitive (the root 
 node), or a pair of primitives (the first node on the right).
@@ -3515,15 +3450,13 @@ increase the number of children, so these methods will be temporary.
 </p><p>I expected this to hurt performance, but if it does that's counteracted by the node's better arrangement in memory.
 This performs significantly better than the last approach, only a couple of percent worse than the original.
 </p>
-<h4><span class="mw-headline" id="Simplified_Traversal_Method"><span class="mw-headline-number">4.8.3.6</span> Simplified Traversal Method</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=65" title="Edit section: Simplified Traversal Method">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>This is where the previous changes start to pay off.
+<h4><span class="mw-headline" id="Simplified_Traversal_Method"><span class="mw-headline-number">4.8.3.6</span> Simplified Traversal Method</span> <p>This is where the previous changes start to pay off.
 A node now contains either a single primitive, or the set of its children (for now, always a pair).
 This is a reduction in the number of valid states a node can be in, and actually simplifies the traversal function.
 Not only is this an improvement for readability, it actually results in better performance, too.
 The traversal benchmarks run between 5 and 15% faster than the original version, depending on the kernel!
 </p>
-<h4><span class="mw-headline" id="Simplified_Ray-Traversal_Method"><span class="mw-headline-number">4.8.3.7</span> Simplified Ray-Traversal Method</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=66" title="Edit section: Simplified Ray-Traversal Method">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The <code>ray_intersection()</code> method in <code>AABB_ray_intersection.h</code>
+<h4><span class="mw-headline" id="Simplified_Ray-Traversal_Method"><span class="mw-headline-number">4.8.3.7</span> Simplified Ray-Traversal Method</span> <p>The <code>ray_intersection()</code> method in <code>AABB_ray_intersection.h</code>
  behaves a little bit differently than the tree's built in traversal 
 function.
 That method can be used to find out if there are any intersections with 
@@ -3545,8 +3478,7 @@ My theory is that before primitives would immediately be checked for intersectio
 but now they are being added to the queue, since they have their own nodes with bounding boxes.
 There are workarounds to prevent this from happening, which I plan to explore once other optimizations have been applied.
 </p>
-<h4><span class="mw-headline" id="Eliminating_use_of_.22left.22_and_.22right.22"><span class="mw-headline-number">4.8.3.8</span> Eliminating use of "left" and "right"</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=67" title="Edit section: Eliminating use of &quot;left&quot; and &quot;right&quot;">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The left/right data accessors actually fell out of use when I 
+<h4><span class="mw-headline" id="Eliminating_use_of_.22left.22_and_.22right.22"><span class="mw-headline-number">4.8.3.8</span> Eliminating use of "left" and "right"</span> <p>The left/right data accessors actually fell out of use when I 
 simplified the traversal functions.
 Because they didn't reflect the structure of the tree anymore, they 
 didn't have any reason to appear in the new version of the functions.
@@ -3575,9 +3507,7 @@ possible.
 I also suspect that the code for determining how many primitives a node should contain is performing poorly.
 Overall, benchmarks run around 50% slower.
 </p>
-<h2><span class="mw-headline" id="July_17_-_July_24"><span class="mw-headline-number">4.9</span> July 17 - July 24</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=68" title="Edit section: July 17 - July 24">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Enabling_N-Way_Splitting"><span class="mw-headline-number">4.9.1</span> Enabling N-Way Splitting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=69" title="Edit section: Enabling N-Way Splitting">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>All of my preparatory work paid off, 
+<h2><span class="mw-headline" id="July_17_-_July_24"><span class="mw-headline-number">4.9</span> July 17 - July 24</span> <h3><span class="mw-headline" id="Enabling_N-Way_Splitting"><span class="mw-headline-number">4.9.1</span> Enabling N-Way Splitting</span> <p>All of my preparatory work paid off, 
 and getting a tree with N-way splits was accomplished by simply replacing all instances of a hard-coded "2" with a variable N.
 By changing N, I successfully produced trees of different widths.
 </p><p>Changing N to 4 results in a tree that is traversed marginally slower (a couple of percent);
@@ -3590,8 +3520,7 @@ current code is actually only around 12% slower than the original.
 </p><p>A clear future step is to define a solid API for the modified tree (for example, N should be a template parameter),
 but serious time shouldn't be spent on that until after we can show a performance advantage.
 </p>
-<h3><span class="mw-headline" id="Cleaning_up_Traversal_code"><span class="mw-headline-number">4.9.2</span> Cleaning up Traversal code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=70" title="Edit section: Cleaning up Traversal code">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>The following is my solution for performing a traversal on a N-way 
+<h3><span class="mw-headline" id="Cleaning_up_Traversal_code"><span class="mw-headline-number">4.9.2</span> Cleaning up Traversal code</span> <p>The following is my solution for performing a traversal on a N-way 
 tree.
 The intention of splitting the recursive into two for loops is to enable
  SIMD between the different invocations of the non-recursive loop.
@@ -3908,8 +3837,7 @@ interpret.
 intersection code is branchless, the compiler misses the opportunity to 
 unroll a loop and vectorize across the inlined functions!
 </p>
-<h3><span class="mw-headline" id="Benchmarking_Different_types_of_Intersections"><span class="mw-headline-number">4.9.3</span> Benchmarking Different types of Intersections</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=71" title="Edit section: Benchmarking Different types of Intersections">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Pierre and I have been looking at the idea of putting a using a 
+<h3><span class="mw-headline" id="Benchmarking_Different_types_of_Intersections"><span class="mw-headline-number">4.9.3</span> Benchmarking Different types of Intersections</span> <p>Pierre and I have been looking at the idea of putting a using a 
 bounding box (or several) around the query to speed up traversal.
 This strategy could make a big difference, because CGAL's bbox-bbox 
 intersection doesn't require any special care to preserve exactness;
@@ -3961,8 +3889,7 @@ The difference likely won't be quite as spectacular in a real context
 these results make me pretty optimistic that we can get a performance 
 improvement!
 </p>
-<h3><span class="mw-headline" id="Implementing_a_simple_Boxed_Query_technique"><span class="mw-headline-number">4.9.4</span> Implementing a simple Boxed Query technique</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=72" title="Edit section: Implementing a simple Boxed Query technique">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>My solution for simple boxing of queries has the following features:
+<h3><span class="mw-headline" id="Implementing_a_simple_Boxed_Query_technique"><span class="mw-headline-number">4.9.4</span> Implementing a simple Boxed Query technique</span> <p>My solution for simple boxing of queries has the following features:
 </p>
 <ul>
 <li> A <code>Boxed_query&lt;Q&gt;</code> class, which contains a reference to the query object and a bounding box that encloses it.
@@ -4043,12 +3970,9 @@ almost certainly interferes with vectorization between function calls.
 Even without that factor, its time was dominated by the overhead of 
 saving the result.
 </p>
-<h2><span class="mw-headline" id="July_25_-_August_2"><span class="mw-headline-number">4.10</span> July 25 - August 2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=73" title="Edit section: July 25 - August 2">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Using_Boxed_Queries_to_Traverse_the_Tree"><span class="mw-headline-number">4.10.1</span> Using Boxed Queries to Traverse the Tree</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=74" title="Edit section: Using Boxed Queries to Traverse the Tree">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>With the performance potential confirmed, it made sense to try to take advantage of boxed queries when traversing the tree.
+<h2><span class="mw-headline" id="July_25_-_August_2"><span class="mw-headline-number">4.10</span> July 25 - August 2</span> <h3><span class="mw-headline" id="Using_Boxed_Queries_to_Traverse_the_Tree"><span class="mw-headline-number">4.10.1</span> Using Boxed Queries to Traverse the Tree</span> <p>With the performance potential confirmed, it made sense to try to take advantage of boxed queries when traversing the tree.
 </p>
-<h4><span class="mw-headline" id="Specialized_Traversal_Function"><span class="mw-headline-number">4.10.1.1</span> Specialized Traversal Function</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=75" title="Edit section: Specialized Traversal Function">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The core of this strategy is a new template specialization for the 
+<h4><span class="mw-headline" id="Specialized_Traversal_Function"><span class="mw-headline-number">4.10.1.1</span> Specialized Traversal Function</span> <p>The core of this strategy is a new template specialization for the 
 traversal function, so that we can treat boxed queries specially.
 </p>
 <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> Tr<span class="sy1">&gt;</span>
@@ -4067,8 +3991,7 @@ against.
 </p><p>Our specialization of the traversal function builds the new box for each child before it recursively traverses them,
 it also performs an intersection directly using the contained query directly once it reaches a primitive.
 </p>
-<h4><span class="mw-headline" id="Invalidating_Traversal_Traits_Assumptions"><span class="mw-headline-number">4.10.1.2</span> Invalidating Traversal Traits Assumptions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=76" title="Edit section: Invalidating Traversal Traits Assumptions">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>When I tried to directly intersect the query and the primitive in the base case of the traversal, I ran into a small snag.
+<h4><span class="mw-headline" id="Invalidating_Traversal_Traits_Assumptions"><span class="mw-headline-number">4.10.1.2</span> Invalidating Traversal Traits Assumptions</span> <p>When I tried to directly intersect the query and the primitive in the base case of the traversal, I ran into a small snag.
 </p><p>The AABB_traversal_traits classes each provide two functions:
 <code>bool do_intersect(const Query&amp; query, const Node&amp; node)</code> for intersections with each child when determining whether to traverse recursively,
 and <code>void intersection(const Query&amp; query, const Primitive&amp; primitive)</code> for direct intersections with primitives (the traits class is responsible for collecting the results).
@@ -4080,8 +4003,7 @@ As a temporary solution, these two functions are independently templated, with n
 This shouldn't have any performance penalty, but it does cut against the grain of the Traits system's original design;
 eventually I think it's important to find a cleaner solution.
 </p>
-<h3><span class="mw-headline" id="Issues_with_Traversal_Correctness"><span class="mw-headline-number">4.10.2</span> Issues with Traversal Correctness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=77" title="Edit section: Issues with Traversal Correctness">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Even with careful checking of the algorithm, the boxed query 
+<h3><span class="mw-headline" id="Issues_with_Traversal_Correctness"><span class="mw-headline-number">4.10.2</span> Issues with Traversal Correctness</span> <p>Even with careful checking of the algorithm, the boxed query 
 traversal was producing different results than the original "naive" 
 solution.
 It consistently detected fewer intersections (6,114 vs 6,708, for 
@@ -4114,8 +4036,7 @@ If I get correct results with the Epec kernel, that means that this
 problem can be solved by creating a more conservative approach for 
 putting a bbox around the query.
 </p>
-<h4><span class="mw-headline" id="Compatibility_with_Epeck"><span class="mw-headline-number">4.10.2.1</span> Compatibility with Epeck</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=78" title="Edit section: Compatibility with Epeck">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Getting the boxed query system working with Epeck was more challenging than expected.
+<h4><span class="mw-headline" id="Compatibility_with_Epeck"><span class="mw-headline-number">4.10.2.1</span> Compatibility with Epeck</span> <p>Getting the boxed query system working with Epeck was more challenging than expected.
 Introducing it as another test case to the <code>any_all_benchmark</code> caused a wave of template errors;
 which surprised me because I had expected it to have an identical interface to the other kernels.
 Fixing the issues helped me discover and eliminate an unnecessary special case leftover from the old code,
@@ -4123,8 +4044,7 @@ and it ensured that all treatments of the boxed_query are done where I expect (b
 </p><p>Once Epeck was working, I was able to confirm that it always produced correct results. 
 This means that our issue must stem from the query boxing approach not being conservative, as we thought.
 </p>
-<h3><span class="mw-headline" id="Interval-based_Boxing"><span class="mw-headline-number">4.10.3</span> Interval-based Boxing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=79" title="Edit section: Interval-based Boxing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>After some experimentation with template specializations for lines and rays, 
+<h3><span class="mw-headline" id="Interval-based_Boxing"><span class="mw-headline-number">4.10.3</span> Interval-based Boxing</span> <p>After some experimentation with template specializations for lines and rays, 
 I found that the simplest approach for adapting the existing boxing system was to use CGAL's kernel converter type.
 This let me make very few changes to the existing code, and preserve compatibility with the same range of Query types.
 </p><p>I eventually found that using <code>Interval_nt&lt;false&gt;</code> instead of <code>Interval_nt&lt;true&gt;</code> made a massive performance difference.
@@ -4160,8 +4080,7 @@ interval_query <span class="sy1">=</span> K_to_Interval<span class="br0">(</span
 <p>This allowed for full correctness, but came with a massive performance penalty.
 Creating a conservative bbox is a very expensive process, and it eliminated the advantage that the boxing strategy had.
 </p>
-<h4><span class="mw-headline" id="Performance_Results"><span class="mw-headline-number">4.10.3.1</span> Performance Results</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=80" title="Edit section: Performance Results">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>As usual, benchmarking is done with the <code>aabb_any_all_benchmark</code>. 
+<h4><span class="mw-headline" id="Performance_Results"><span class="mw-headline-number">4.10.3.1</span> Performance Results</span> <p>As usual, benchmarking is done with the <code>aabb_any_all_benchmark</code>. 
 This program builds a tree from a triangle mesh that it loads from a file,
 and then generates a large number of segment, ray, and line queries which it casts into the tree.
 </p><p>Results were disappointing, with a decrease in performance for all kernels.
@@ -4229,8 +4148,7 @@ by a certain amount, especially while retaining our genericity.
 <p><i>The Epic kernel is the most likely to see a useful improvement, because it has the most expensive ray-bbox intersections.</i>
 </p>
 </td></tr></tbody></table>
-<h3><span class="mw-headline" id="Tunable_Parameters"><span class="mw-headline-number">4.10.4</span> Tunable Parameters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=81" title="Edit section: Tunable Parameters">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>During a pair programming session, Andreas and I explored several avenues for improving our performance.
+<h3><span class="mw-headline" id="Tunable_Parameters"><span class="mw-headline-number">4.10.4</span> Tunable Parameters</span> <p>During a pair programming session, Andreas and I explored several avenues for improving our performance.
 We identified a collection of parameters that could be tuned to improve our results.
 </p><p>In the following table, all variations not listed in (parentheses) have been built and benchmarked.
 Each is discussed in more detail below.
@@ -4282,8 +4200,7 @@ combinations.
 Some of the parameters have independent affects on performance, but 
 others depend strongly on what other optimization are active.
 </p>
-<h4><span class="mw-headline" id="Conditional_Shrinking"><span class="mw-headline-number">4.10.4.1</span> Conditional Shrinking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=82" title="Edit section: Conditional Shrinking">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>This parameter determines when we create a new bounding box for our boxed query.
+<h4><span class="mw-headline" id="Conditional_Shrinking"><span class="mw-headline-number">4.10.4.1</span> Conditional Shrinking</span> <p>This parameter determines when we create a new bounding box for our boxed query.
 This is important because it effects two opposing aspects of our performance:
 </p>
 <ul>
@@ -4311,8 +4228,7 @@ We discussed several heuristics, but the only one implemented depends on interse
 If the current box intersected with all the child nodes, then it might be too big (it's large enough to touch them all).
 When this happens, we shrink the box and continue traversing the tree.
 </p>
-<h4><span class="mw-headline" id="Multi-BBox"><span class="mw-headline-number">4.10.4.2</span> Multi-BBox</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=83" title="Edit section: Multi-BBox">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>By using more than one box to wrap the primitive, we may be able to get an unintuitively large performance advantage.
+<h4><span class="mw-headline" id="Multi-BBox"><span class="mw-headline-number">4.10.4.2</span> Multi-BBox</span> <p>By using more than one box to wrap the primitive, we may be able to get an unintuitively large performance advantage.
 This is because of some nonlinearities in the way that costs and benefits scale as the number of bboxes scale:
 </p>
 <ul>
@@ -4337,8 +4253,7 @@ This is good, but we were hoping that the theoretical 16x reduction in query box
 </p><p>We're still interested in trying larger numbers of boxes.
 As the number gets higher, it may make a non-shrinking approach more viable.
 </p>
-<h4><span class="mw-headline" id="Children_per_node"><span class="mw-headline-number">4.10.4.3</span> Children per node</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=84" title="Edit section: Children per node">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Increasing the number of children per node makes sense when there's 
+<h4><span class="mw-headline" id="Children_per_node"><span class="mw-headline-number">4.10.4.3</span> Children per node</span> <p>Increasing the number of children per node makes sense when there's 
 an "economy of scale" for query-bbox intersections.
 We found that this wasn't the case for naive linear queries, and 
 increasing the width of the tree generally decreased performance.
@@ -4359,8 +4274,7 @@ amortized over the number of times it's used for intersections.
 Just as important, a wider tree can be much shallower, which reduces the
  number of times we need to shrink the box.
 </p>
-<h4><span class="mw-headline" id="Trust_in_the_Filter"><span class="mw-headline-number">4.10.4.4</span> Trust in the Filter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=85" title="Edit section: Trust in the Filter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>There is more than one way to use our boxed query's bounding box.
+<h4><span class="mw-headline" id="Trust_in_the_Filter"><span class="mw-headline-number">4.10.4.4</span> Trust in the Filter</span> <p>There is more than one way to use our boxed query's bounding box.
 We have two options, with their own benefits and drawbacks.
 </p><p><b>Fall back to direct intersections when uncertain</b>
 </p><p>Our original solution was to use the box as a negative filter.
@@ -4420,8 +4334,7 @@ other node, so does the query itself!
 </p><p>When we approach the problem this way, we slightly increase the number of query-primitive intersections,
 that difference is vanishingly small in comparison to the number of query-bbox intersections we save.
 </p>
-<h4><span class="mw-headline" id="Optimal_Results"><span class="mw-headline-number">4.10.4.5</span> Optimal Results</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=86" title="Edit section: Optimal Results">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>My first attempt had the following parameters:
+<h4><span class="mw-headline" id="Optimal_Results"><span class="mw-headline-number">4.10.4.5</span> Optimal Results</span> <p>My first attempt had the following parameters:
 </p>
 <ul>
 <li> Always shrink (every time we descend the tree)
@@ -4502,8 +4415,7 @@ Bbox-Bbox intersections are very cheap compared to most Epic kernel
 operations, but this advantage shrinks for something like the Simple 
 cartesian float kernel.
 </p>
-<h3><span class="mw-headline" id="Only_Lines_Benefit_from_this_Optimization"><span class="mw-headline-number">4.10.5</span> Only Lines Benefit from this Optimization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=87" title="Edit section: Only Lines Benefit from this Optimization">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>On Andreas' suggestion, I substituted Ray queries for Lines in the benchmark,
+<h3><span class="mw-headline" id="Only_Lines_Benefit_from_this_Optimization"><span class="mw-headline-number">4.10.5</span> Only Lines Benefit from this Optimization</span> <p>On Andreas' suggestion, I substituted Ray queries for Lines in the benchmark,
 this had a rather unfortunate effect on our performance results.
 </p>
 <table class="wikitable">
@@ -4560,9 +4472,7 @@ like the line, so this is where its performance benefit comes from.
 This makes perfect sense, since line queries are slower without a strategy like boxing.
 Our work here has identified an optimization path that helps only a small subset of use-cases.
 </p>
-<h2><span class="mw-headline" id="August_3_-_August_10"><span class="mw-headline-number">4.11</span> August 3 - August 10</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=88" title="Edit section: August 3 - August 10">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Feasibility_of_a_Compact_Tree_Structure"><span class="mw-headline-number">4.11.1</span> Feasibility of a Compact Tree Structure</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=89" title="Edit section: Feasibility of a Compact Tree Structure">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Andreas and I have been discussing the possibility of accessing child nodes using pointer or index math instead of references.
+<h2><span class="mw-headline" id="August_3_-_August_10"><span class="mw-headline-number">4.11</span> August 3 - August 10</span> <h3><span class="mw-headline" id="Feasibility_of_a_Compact_Tree_Structure"><span class="mw-headline-number">4.11.1</span> Feasibility of a Compact Tree Structure</span> <p>Andreas and I have been discussing the possibility of accessing child nodes using pointer or index math instead of references.
 This would rely on the fact that the arrangement of the nodes in memory should be deterministic.
 It comes with several advantages:
 </p>
@@ -4588,8 +4498,7 @@ if we're okay with having empty nodes (gaps in our underlying vector), we can ac
 Luckily, even with no changes to implementation our current construction strategy already produces nearly-complete trees.
 </p><p>Of course, the advantages and simplicity of implementation lead to one question:
 </p>
-<h4><span class="mw-headline" id="Why_isn.27t_Embree_doing_this.3F"><span class="mw-headline-number">4.11.1.1</span> Why isn't Embree doing this?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=90" title="Edit section: Why isn't Embree doing this?">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Using an implicit structure has some drawbacks, most of which don't apply to CGAL at the moment,
+<h4><span class="mw-headline" id="Why_isn.27t_Embree_doing_this.3F"><span class="mw-headline-number">4.11.1.1</span> Why isn't Embree doing this?</span> <p>Using an implicit structure has some drawbacks, most of which don't apply to CGAL at the moment,
 but would if we wanted to incorporate some of Embree's techniques.
 </p>
 <ul>
@@ -4614,8 +4523,7 @@ optimizations and features like these in the future, but it would make
 their implementation more challenging if CGAL wanted to incorporate them
  someday.
 </p>
-<h3><span class="mw-headline" id="Potential_API_for_an_Implicit_Tree"><span class="mw-headline-number">4.11.2</span> Potential API for an Implicit Tree</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=91" title="Edit section: Potential API for an Implicit Tree">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>There exists one major difference that means conversion to a compact representation isn't straightforward:
+<h3><span class="mw-headline" id="Potential_API_for_an_Implicit_Tree"><span class="mw-headline-number">4.11.2</span> Potential API for an Implicit Tree</span> <p>There exists one major difference that means conversion to a compact representation isn't straightforward:
 <i>nodes don't know about their children without additional context about the rest of the tree.</i>
 In the current tree, a node has a reference to its children which can be
  followed regardless of whether this node is the root or deep inside the
@@ -4631,11 +4539,9 @@ You could use this type to produce handles for its parent and children,
 and it could provide access to the underlying bbox or primitive.
 It could be treated just as we do a node right now, almost as a drop-in replacement.
 </p>
-<h3><span class="mw-headline" id="Preparing_to_implement_Implicit_Tree_construction"><span class="mw-headline-number">4.11.3</span> Preparing to implement Implicit Tree construction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=92" title="Edit section: Preparing to implement Implicit Tree construction">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Development will be done on the new <a rel="nofollow" class="external text" href="https://github.com/JacksonCampolattaro/cgal/tree/implicit-tree-structure">implicit-tree-structure</a> branch.
+<h3><span class="mw-headline" id="Preparing_to_implement_Implicit_Tree_construction"><span class="mw-headline-number">4.11.3</span> Preparing to implement Implicit Tree construction</span> <p>Development will be done on the new <a rel="nofollow" class="external text" href="https://github.com/JacksonCampolattaro/cgal/tree/implicit-tree-structure">implicit-tree-structure</a> branch.
 </p>
-<h4><span class="mw-headline" id="Planning_2"><span class="mw-headline-number">4.11.3.1</span> Planning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=93" title="Edit section: Planning">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Conversion of the current tree to an implicit structure can be broken into steps, just as conversion to an N-way tree was.
+<h4><span class="mw-headline" id="Planning_2"><span class="mw-headline-number">4.11.3.1</span> Planning</span> <p>Conversion of the current tree to an implicit structure can be broken into steps, just as conversion to an N-way tree was.
 </p>
 <ul>
 <li> Add reference to the tree's root as a member of the Node class; use the node's root to determine the index of the node <code>index = this - root</code>.
@@ -4674,8 +4580,7 @@ to the bbox/primitive *. Update all accessors to follow this reference.
 <li> Substitute <code>union</code> where <code>boost::variant</code> was used; once the system is confirmed to be working the variant's type checking adds a lot of unnecessary overhead.
 </li>
 </ul>
-<h4><span class="mw-headline" id=".22Fat_nodes.22_intermediate_solution"><span class="mw-headline-number">4.11.3.2</span> "Fat nodes" intermediate solution</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=94" title="Edit section: &quot;Fat nodes&quot; intermediate solution">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The first few steps in my plan produce a system where nodes are 
+<h4><span class="mw-headline" id=".22Fat_nodes.22_intermediate_solution"><span class="mw-headline-number">4.11.3.2</span> "Fat nodes" intermediate solution</span> <p>The first few steps in my plan produce a system where nodes are 
 arranged as an implicit tree, and use pointer math to find their 
 children.
 In order to make this work while keeping the logic inside the node, 
@@ -4698,8 +4603,7 @@ With this information, each node has the following knowledge:
 Despite this, it still performs almost exactly as well.
 This suggests that this benchmark is not particularly cache-limited, which makes sense given what we already know.
 </p>
-<h4><span class="mw-headline" id="Making_the_nodes_more_compact"><span class="mw-headline-number">4.11.3.3</span> Making the nodes more compact</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=95" title="Edit section: Making the nodes more compact">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The children pointer is now strictly unnecessary, but that space is 
+<h4><span class="mw-headline" id="Making_the_nodes_more_compact"><span class="mw-headline-number">4.11.3.3</span> Making the nodes more compact</span> <p>The children pointer is now strictly unnecessary, but that space is 
 shared with the pointer to the primitive.
 We could stop saving a reference to the children, but that would leave 
 us with a primitive pointer that's left null for non-leaf nodes.
@@ -4708,8 +4612,7 @@ variant type: <code>boost::variant&lt;Bbox, Primitive *&gt;</code>.
 Unfortunately, this changes the topology of the tree in a way that 
 reduces performance; this will be discussed in a later section.
 </p>
-<h4><span class="mw-headline" id="Moving_traversal_logic_to_the_tree"><span class="mw-headline-number">4.11.3.4</span> Moving traversal logic to the tree</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=96" title="Edit section: Moving traversal logic to the tree">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The node type still contains one redundant value: the root pointer.
+<h4><span class="mw-headline" id="Moving_traversal_logic_to_the_tree"><span class="mw-headline-number">4.11.3.4</span> Moving traversal logic to the tree</span> <p>The node type still contains one redundant value: the root pointer.
 Nodes need this point of reference to calculate their children's locations, but every node holds the same value!
 </p><p>There are several ways I could go about eliminating this value, 
 but after a discussion with Andreas we decided that the simplest 
@@ -4720,8 +4623,7 @@ do anything special to hold onto it once the function is moved.
 </p><p>Despite some initial confusion, I eventually determined that this
  change had no meaningful effect on performance, one way or another.
 </p>
-<h3><span class="mw-headline" id="The_source_of_N-Way_Tree.27s_performance_advantage"><span class="mw-headline-number">4.11.4</span> The source of N-Way Tree's performance advantage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=97" title="Edit section: The source of N-Way Tree's performance advantage">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Andreas and I had a conversation with Sebastien about the performance
+<h3><span class="mw-headline" id="The_source_of_N-Way_Tree.27s_performance_advantage"><span class="mw-headline-number">4.11.4</span> The source of N-Way Tree's performance advantage</span> <p>Andreas and I had a conversation with Sebastien about the performance
  advantages we were seeing in the N-way tree.
 For traversals with rays and segments this was as much as a 10% 
 advantage, so we wanted to determine the source.
@@ -4775,8 +4677,7 @@ This could provide the best of both worlds: it doesn't require building
 boxes for primitives more than once, and it doesn't take up as much 
 space as all those extra nodes in the tree.
 </p>
-<h3><span class="mw-headline" id="Building_a_tree_using_a_sort_along_the_Hilbert_curve"><span class="mw-headline-number">4.11.5</span> Building a tree using a sort along the Hilbert curve</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=98" title="Edit section: Building a tree using a sort along the Hilbert curve">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>One technique used by Embree to great effect is "Spatial Sorting".
+<h3><span class="mw-headline" id="Building_a_tree_using_a_sort_along_the_Hilbert_curve"><span class="mw-headline-number">4.11.5</span> Building a tree using a sort along the Hilbert curve</span> <p>One technique used by Embree to great effect is "Spatial Sorting".
 This is an alternative method of construction that produces a lower 
 quality tree, but does so very quickly.
 It's useful for Embree when rendering dynamic scenes; when the 
@@ -4878,8 +4779,7 @@ That's done using the property map type, which requires a unary function:
 <span class="br0">}</span><span class="sy4">;</span></pre></div></div>
 <p>Despite some ugliness, this solution fits very nicely into the AABB tree's existing abstractions.
 </p>
-<h4><span class="mw-headline" id="Performance"><span class="mw-headline-number">4.11.5.1</span> Performance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=99" title="Edit section: Performance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Based on my understanding of the tradeoffs of a spatial sorting tree construction, 
+<h4><span class="mw-headline" id="Performance"><span class="mw-headline-number">4.11.5.1</span> Performance</span> <p>Based on my understanding of the tradeoffs of a spatial sorting tree construction, 
 I would expect tree construction to become much faster but traversal to become slower.
 The new construction times look like the following (averaged over 100 constructions of a tree from the larger <code>bunny00.off</code> dataset).
 </p>
@@ -4963,8 +4863,7 @@ The results for traversal are even more surprising:
 <p>Here, the hilbert sort approach handily outperforms the existing solution!
 What is going on?
 </p>
-<h3><span class="mw-headline" id="Building_a_Complete_tree_with_repeated_subdivision"><span class="mw-headline-number">4.11.6</span> Building a Complete tree with repeated subdivision</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=100" title="Edit section: Building a Complete tree with repeated subdivision">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>In several cases, we've encountered scenarios where it would be 
+<h3><span class="mw-headline" id="Building_a_Complete_tree_with_repeated_subdivision"><span class="mw-headline-number">4.11.6</span> Building a Complete tree with repeated subdivision</span> <p>In several cases, we've encountered scenarios where it would be 
 beneficial if we could guarantee that our tree was complete.
 Unfortunately, the current solution for construction the tree doesn't 
 have an obvious mechanism to make this happen.
@@ -5021,8 +4920,7 @@ as that would require going more than one level deeper.
 </p><p>Put together, the complete formula looks like the following:
 </p><p><img class="mwe-math-fallback-png-inline tex" alt="{\begin{aligned}&amp;{\text{Given some }}N\\s&amp;=2^{{d}},\ {\text{where }}s\leq N\\r&amp;=N-s\\N_{{L}}&amp;={\frac  {s}{2}}+min({\frac  {s}{2}},r)\\N_{{R}}&amp;=N-N_{{L}}\\\end{aligned}}" src="wiki_files/5c5d7c3f13d94c9bfaf6546479d0c286.png">
 </p>
-<h4><span class="mw-headline" id="Generalizing_to_higher-order_trees"><span class="mw-headline-number">4.11.6.1</span> Generalizing to higher-order trees</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=101" title="Edit section: Generalizing to higher-order trees">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>This math works well for a standard 2-way tree, but completeness is 
+<h4><span class="mw-headline" id="Generalizing_to_higher-order_trees"><span class="mw-headline-number">4.11.6.1</span> Generalizing to higher-order trees</span> <p>This math works well for a standard 2-way tree, but completeness is 
 just as important for higher order trees, where each node can have more 
 than 2 children.
 Luckily, the math was relatively simple to generalize.
@@ -5031,8 +4929,7 @@ Luckily, the math was relatively simple to generalize.
 </p><p>Here, <img class="mwe-math-fallback-png-inline tex" alt="r_{{i}}" src="wiki_files/8030c75196c4ac23828f48f7278c5c21.png"> is the number of remaining primitives left over after extra primitives have already been distributed to nodes <img class="mwe-math-fallback-png-inline tex" alt="0...i-1" src="wiki_files/add4dcc926d6b9a2a955bec17b359fc3.png">.
 Besides that, this formula functions in much the same way as the 2-way function.
 </p>
-<h3><span class="mw-headline" id="Better_benchmarks_for_Hilbert-sort_construction"><span class="mw-headline-number">4.11.7</span> Better benchmarks for Hilbert-sort construction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=102" title="Edit section: Better benchmarks for Hilbert-sort construction">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Our earlier benchmarks for the Hilbert sort tree construction approach produced some unintuitive results.
+<h3><span class="mw-headline" id="Better_benchmarks_for_Hilbert-sort_construction"><span class="mw-headline-number">4.11.7</span> Better benchmarks for Hilbert-sort construction</span> <p>Our earlier benchmarks for the Hilbert sort tree construction approach produced some unintuitive results.
 Conventional wisdom is that building a tree this way should be faster than recursive splitting,
 but that the tree produced will be of lower quality.
 In benchmarks, this would show as a large improvement in construction speed, coupled with a small penalty to traversal speed.
@@ -5221,9 +5118,7 @@ this wasn't the case.
 Perhaps for deeper trees, the optimality of their structure becomes more
  important to performance.
 </p>
-<h3><span class="mw-headline" id="Improving_Hilbert_sort_construction_performance"><span class="mw-headline-number">4.11.8</span> Improving Hilbert sort construction performance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=103" title="Edit section: Improving Hilbert sort construction performance">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<h4><span class="mw-headline" id="Bottom-up_boxing"><span class="mw-headline-number">4.11.8.1</span> Bottom-up boxing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=104" title="Edit section: Bottom-up boxing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Hilbert sort isn't constructing as fast as it could, because the bbox
+<h3><span class="mw-headline" id="Improving_Hilbert_sort_construction_performance"><span class="mw-headline-number">4.11.8</span> Improving Hilbert sort construction performance</span> <h4><span class="mw-headline" id="Bottom-up_boxing"><span class="mw-headline-number">4.11.8.1</span> Bottom-up boxing</span> <p>Hilbert sort isn't constructing as fast as it could, because the bbox
  is still being produced on the way down. 
 The hilbert sort process involves recursive splitting, so its only 
 advantage comes from the fact that the sorting process doesn't require 
@@ -5256,8 +5151,7 @@ the benchmark starts to look a lot more how we expected.
 </tbody></table>
 <p>Construction is now about 30% better, and traversal is around 20% worse.
 </p>
-<h4><span class="mw-headline" id="Multithreading"><span class="mw-headline-number">4.11.8.2</span> Multithreading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=105" title="Edit section: Multithreading">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>We can get a further speedup by enabling a multithreaded sort of the primitives,
+<h4><span class="mw-headline" id="Multithreading"><span class="mw-headline-number">4.11.8.2</span> Multithreading</span> <p>We can get a further speedup by enabling a multithreaded sort of the primitives,
 a feature provided by CGAL's hilbert sort implementation.
 </p>
 <table class="wikitable">
@@ -5282,13 +5176,11 @@ a feature provided by CGAL's hilbert sort implementation.
 Hilbert traits can be used to construct a tree nearly 3 times as fast as the typical method,
 which can make its tradeoffs very appealing.
 </p>
-<h3><span class="mw-headline" id="More_challenging_benchmarks"><span class="mw-headline-number">4.11.9</span> More challenging benchmarks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=106" title="Edit section: More challenging benchmarks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>The tweaks we made to the new traits class have given it demonstrable advantages over the traditional method,
+<h3><span class="mw-headline" id="More_challenging_benchmarks"><span class="mw-headline-number">4.11.9</span> More challenging benchmarks</span> <p>The tweaks we made to the new traits class have given it demonstrable advantages over the traditional method,
 but in order to reason about when it's appropriate we need to see how it performs in extreme use cases.
 To that end, we created some more difficult benchmarks.
 </p>
-<h4><span class="mw-headline" id="Larger_dataset"><span class="mw-headline-number">4.11.9.1</span> Larger dataset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=107" title="Edit section: Larger dataset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Andreas provided a .PLY file with a high resolution scan of a gargoyle. 
+<h4><span class="mw-headline" id="Larger_dataset"><span class="mw-headline-number">4.11.9.1</span> Larger dataset</span> <p>Andreas provided a .PLY file with a high resolution scan of a gargoyle. 
 Its mesh is made up of over 7,000,000 vertices, so building a tree for it is an expensive operation.
 </p>
 <table class="wikitable">
@@ -5313,8 +5205,7 @@ remaining around 40% the traditional method.
 The size of the tree also had little effect on the relative cost of traversals,
 with the lower quality tree still requiring under 20% more time to traverse.
 </p>
-<h4><span class="mw-headline" id="Real-life_use_case"><span class="mw-headline-number">4.11.9.2</span> Real-life use case</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=108" title="Edit section: Real-life use case">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The fact that the new construction can be used simply by swapping the
+<h4><span class="mw-headline" id="Real-life_use_case"><span class="mw-headline-number">4.11.9.2</span> Real-life use case</span> <p>The fact that the new construction can be used simply by swapping the
  traits type opens up a lot of opportunities for interesting real-life 
 tests.
 This makes it easy to look at how the tradeoffs we've been measuring 
@@ -5350,9 +5241,7 @@ The package subclasses <code>AABB_traits</code>, so we could swap strategies eas
 </tbody></table>
 <p>Here, we see that for this use case, the new technique isn't worth its tradeoffs.
 </p>
-<h2><span class="mw-headline" id="August_11_-_August_17"><span class="mw-headline-number">4.12</span> August 11 - August 17</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=109" title="Edit section: August 11 - August 17">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Quantifying_tradeoffs"><span class="mw-headline-number">4.12.1</span> Quantifying tradeoffs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=110" title="Edit section: Quantifying tradeoffs">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>So when is it actually worth it to use the new traits class?
+<h2><span class="mw-headline" id="August_11_-_August_17"><span class="mw-headline-number">4.12</span> August 11 - August 17</span> <h3><span class="mw-headline" id="Quantifying_tradeoffs"><span class="mw-headline-number">4.12.1</span> Quantifying tradeoffs</span> <p>So when is it actually worth it to use the new traits class?
 We can actually determine this from the performance data we've already collected,
 we'll look at the largest test for this:
 </p>
@@ -5484,12 +5373,10 @@ As the tree gets larger, the utility of the new construction strategy declines g
 and when the tree is smaller it loses its advantage rapidly.
 For a small 1000-primitive tree, you only need to do over 5,000 traversals before fast-construction is no longer worthwhile!
 </p>
-<h3><span class="mw-headline" id="More_diverse_test_data"><span class="mw-headline-number">4.12.2</span> More diverse test data</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=111" title="Edit section: More diverse test data">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>To evaluate how the nature of the data affects the new construction strategy's advantages,
+<h3><span class="mw-headline" id="More_diverse_test_data"><span class="mw-headline-number">4.12.2</span> More diverse test data</span> <p>To evaluate how the nature of the data affects the new construction strategy's advantages,
 I standardized the testing procedure and created synthetic datasets with Andreas' help.
 </p>
-<h4><span class="mw-headline" id="Gargoyle"><span class="mw-headline-number">4.12.2.1</span> Gargoyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=112" title="Edit section: Gargoyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>I converted the gargoyle dataset to <code>.off</code>, and rather than simplifying the mesh I randomly removed a subset of its faces.
+<h4><span class="mw-headline" id="Gargoyle"><span class="mw-headline-number">4.12.2.1</span> Gargoyle</span> <p>I converted the gargoyle dataset to <code>.off</code>, and rather than simplifying the mesh I randomly removed a subset of its faces.
 This change to how the number of primitives is reduced is actually significant,
 because it makes the mesh more sparse in addition to reducing the size of the tree.
 This will generally result in decreasing hit rates as the dataset is reduced, 
@@ -5589,8 +5476,7 @@ Luckily, we still get good data for larger trees, and the results mirror the pre
 <p>When we use the same formula to find our breakeven points, we get mostly reasonable results.
 The numbers tend to fall within the same orders of magnitude as in the previous test.
 </p>
-<h4><span class="mw-headline" id="Rotated_Sphere-grid"><span class="mw-headline-number">4.12.2.2</span> Rotated Sphere-grid</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=113" title="Edit section: Rotated Sphere-grid">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The dataset for the next test was synthesized using the Polyhedron demo.
+<h4><span class="mw-headline" id="Rotated_Sphere-grid"><span class="mw-headline-number">4.12.2.2</span> Rotated Sphere-grid</span> <p>The dataset for the next test was synthesized using the Polyhedron demo.
 It consists of an 8x8x8 cubic grid of sphere meshes with an affine transform applied so that they aren't perfectly on axis.
 The gargoyle mesh formed a "shell" which the rays were cast outwards from, 
 this mesh is very different from that, and that may have consequences for our performance.
@@ -5682,8 +5568,7 @@ because times are more likely to be driven by the number of traversals.
 <p>It seems as though the two opposing effects mostly cancel out.
 The breakeven point tends to be within the same orders of magnitude as in previous tests.
 </p>
-<h4><span class="mw-headline" id="Mixed_Sphere-grid"><span class="mw-headline-number">4.12.2.3</span> Mixed Sphere-grid</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=114" title="Edit section: Mixed Sphere-grid">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Next, we produced another dataset by merging the affine-transformed sphere grid
+<h4><span class="mw-headline" id="Mixed_Sphere-grid"><span class="mw-headline-number">4.12.2.3</span> Mixed Sphere-grid</span> <p>Next, we produced another dataset by merging the affine-transformed sphere grid
 with the axis-aligned pre-transformation version.
 Besides increasing primitive count, this also has the effect of increasing overall density
 and reducing the likelihood that a ray will hit nothing.
@@ -5777,13 +5662,11 @@ the traversal data is potentially unreliable, and the Hilbert constructed tree b
 </td></tr></tbody></table>
 <p>Once again, we see results with the same magnitude as the other tests.
 </p>
-<h3><span class="mw-headline" id="Switching_from_Median_to_Middle_Hilbert_Policy"><span class="mw-headline-number">4.12.3</span> Switching from Median to Middle Hilbert Policy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=115" title="Edit section: Switching from Median to Middle Hilbert Policy">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>The Hilbert sorting package provides two different strategies,
+<h3><span class="mw-headline" id="Switching_from_Median_to_Middle_Hilbert_Policy"><span class="mw-headline-number">4.12.3</span> Switching from Median to Middle Hilbert Policy</span> <p>The Hilbert sorting package provides two different strategies,
 the one we've been using so far splits based on the median of the points,
 but we might be able to get better results by switching to the "middle" policy.
 </p>
-<h4><span class="mw-headline" id="Gargoyle_2"><span class="mw-headline-number">4.12.3.1</span> Gargoyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=116" title="Edit section: Gargoyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Gargoyle_2"><span class="mw-headline-number">4.12.3.1</span> Gargoyle</span> <table class="wikitable">
 <caption> CGAL::Epick, gargoyle_1637530.off
 </caption>
 <tbody><tr>
@@ -5869,8 +5752,7 @@ but we might be able to get better results by switching to the "middle" policy.
 </td></tr></tbody></table>
 <p>For this data, performance is consistently slightly worse, meaning that the breakeven point is lower.
 </p>
-<h4><span class="mw-headline" id="Rotated_Sphere-grid_2"><span class="mw-headline-number">4.12.3.2</span> Rotated Sphere-grid</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=117" title="Edit section: Rotated Sphere-grid">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Rotated_Sphere-grid_2"><span class="mw-headline-number">4.12.3.2</span> Rotated Sphere-grid</span> <table class="wikitable">
 <caption> CGAL::Epick, sphere_grid_842400.off
 </caption>
 <tbody><tr>
@@ -5945,8 +5827,7 @@ but we might be able to get better results by switching to the "middle" policy.
 The new strategy is slightly better when the number of primitives is small,
 but performs worse for the largest set.
 </p>
-<h4><span class="mw-headline" id="Mixed_Sphere-grid_2"><span class="mw-headline-number">4.12.3.3</span> Mixed Sphere-grid</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=118" title="Edit section: Mixed Sphere-grid">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<table class="wikitable">
+<h4><span class="mw-headline" id="Mixed_Sphere-grid_2"><span class="mw-headline-number">4.12.3.3</span> Mixed Sphere-grid</span> <table class="wikitable">
 <caption> CGAL::Epick, sphere_grid_combined_1684800.off
 </caption>
 <tbody><tr>
@@ -6033,8 +5914,7 @@ but performs worse for the largest set.
 <p>Here, the difference is less consistent, with the new strategy winning some and losing others.
 These results aren't reliable enough in my eyes to justify switching to the middle-strategy as a default.
 </p>
-<h3><span class="mw-headline" id="More_exploration_of_Implicit_Tree_Structures"><span class="mw-headline-number">4.12.4</span> More exploration of Implicit Tree Structures</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=119" title="Edit section: More exploration of Implicit Tree Structures">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>The implicit tree structure I previously created was based on my earlier n-way-tree work,
+<h3><span class="mw-headline" id="More_exploration_of_Implicit_Tree_Structures"><span class="mw-headline-number">4.12.4</span> More exploration of Implicit Tree Structures</span> <p>The implicit tree structure I previously created was based on my earlier n-way-tree work,
 but in order to have an atomic PR, I need to build the same functionality on top of master.
 An important luxury I have when working on this is that the AABB tree's node class is fully internal,
 and it isn't mentioned in the documentation.
@@ -6117,8 +5997,7 @@ The tree also holds an instance of the root node (index 0).
 This is only necessary so that the root accessor can still return a pointer,
 otherwise it would have made more sense to construct this node on request, like all other nodes.
 </p>
-<h4><span class="mw-headline" id="Use_of_Assertions"><span class="mw-headline-number">4.12.4.1</span> Use of Assertions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=120" title="Edit section: Use of Assertions">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>One feature that was central to my development process was the way 
+<h4><span class="mw-headline" id="Use_of_Assertions"><span class="mw-headline-number">4.12.4.1</span> Use of Assertions</span> <p>One feature that was central to my development process was the way 
 the node handle class uses assertion statements.
 I applied assertions liberally, the implicit nature of the tree would 
 have made it hard to catch certain types of errors otherwise.
@@ -6160,8 +6039,7 @@ primitive,
 as well as that the leaf node can correctly locate the primitive it's 
 associated with.
 </p>
-<h3><span class="mw-headline" id=".22Fully_boxed.22_vs_.22Leafless.22_trees"><span class="mw-headline-number">4.12.5</span> "Fully boxed" vs "Leafless" trees</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=121" title="Edit section: &quot;Fully boxed&quot; vs &quot;Leafless&quot; trees">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>A topic that's already come up several times is whether each primitive should have its own bounding box.
+<h3><span class="mw-headline" id=".22Fully_boxed.22_vs_.22Leafless.22_trees"><span class="mw-headline-number">4.12.5</span> "Fully boxed" vs "Leafless" trees</span> <p>A topic that's already come up several times is whether each primitive should have its own bounding box.
 Here, I'll refer to the options as "Leafless" and "Fully boxed".
 </p>
 <ul>
@@ -6204,8 +6082,7 @@ acts as a geometric filter for primitives that don't already have a bbox
 This might be able to provide the same performance of the fully-boxed tree without needing the same amount of additional space.
 In order to look at the tradeoffs holistically, it's necessary to create a leafless version of our implicit tree.
 </p>
-<h4><span class="mw-headline" id="Leafless_Implicit_Tree"><span class="mw-headline-number">4.12.5.1</span> Leafless Implicit Tree</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=122" title="Edit section: Leafless Implicit Tree">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>The implicit tree was relatively easy to convert to a leafless structure, using the following changes:
+<h4><span class="mw-headline" id="Leafless_Implicit_Tree"><span class="mw-headline-number">4.12.5.1</span> Leafless Implicit Tree</span> <p>The implicit tree was relatively easy to convert to a leafless structure, using the following changes:
 </p>
 <ul>
 <li> The box vector was reduced in size, to only include the ones necessary for this configuration.
@@ -6232,8 +6109,7 @@ In order to look at the tradeoffs holistically, it's necessary to create a leafl
  difference being that certain indices don't have boxes associated with 
 them.
 </p>
-<h3><span class="mw-headline" id="Benchmarking_tree_configurations"><span class="mw-headline-number">4.12.6</span> Benchmarking tree configurations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=123" title="Edit section: Benchmarking tree configurations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>(Testing here is done with the Epic Kernel and <code>gargoyle_1637530.off</code> dataset)
+<h3><span class="mw-headline" id="Benchmarking_tree_configurations"><span class="mw-headline-number">4.12.6</span> Benchmarking tree configurations</span> <p>(Testing here is done with the Epic Kernel and <code>gargoyle_1637530.off</code> dataset)
 </p><p>First, we want to see if taking the same tree topology and making it implicit hurts performance,
 to do this we can look at how the leafless versions of both trees compare.
 </p>
@@ -6305,8 +6181,7 @@ fully-boxed architecture that uses explicit connections between nodes.
 <td> 479.0 MiB
 </td></tr>
 </tbody></table>
-<h1><span class="mw-headline" id="Proposed_Optimizations"><span class="mw-headline-number">5</span> Proposed Optimizations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=124" title="Edit section: Proposed Optimizations">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<table class="wikitable">
+<h1><span class="mw-headline" id="Proposed_Optimizations"><span class="mw-headline-number">5</span> Proposed Optimizations</span> <table class="wikitable">
 <caption> Potential Approaches for Improving AABB-tree performance (using SIMD)
 </caption>
 <tbody><tr>
@@ -6387,8 +6262,7 @@ primitives.
 </tbody></table>
 <p><i>* Certain optimizations may not result in increased use of SIMD instructions.</i>
 </p>
-<h1><span class="mw-headline" id="Queue"><span class="mw-headline-number">6</span> Queue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://cgal.geometryfactory.com/CGAL/Members/w/index.php?title=GSoC2021/AABB_tree&amp;action=edit&amp;section=125" title="Edit section: Queue">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<p>Upcoming work:
+<h1><span class="mw-headline" id="Queue"><span class="mw-headline-number">6</span> Queue</span> <p>Upcoming work:
 </p>
 <ul>
 <li> <s>Add description column to tree comparison table</s>
