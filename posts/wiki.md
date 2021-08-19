@@ -1,10 +1,15 @@
 ---
-title: "Placeholder"
+title: "Wiki"
 date: 2021-08-18T15:59:25+02:00
 tags: []
 featured_image: ""
 description: ""
 ---
+
+# Wiki
+
+> Note: This page is mirrored from my page on CGAL's internal wiki,
+> not all formatting is guaranteed to be correct.
 
 <html dir="ltr" class="client-js" lang="en"><head>
 <style type="text/css">/*<![CDATA[*/
@@ -67,11 +72,8 @@ description: ""
 <div id="column-content"><div id="content" class="mw-body-primary" role="main">
 	<a id="top"></a>
 	
-	<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">GSoC2021/AABB tree</span></h1>
-	<div id="bodyContent" class="mw-body">
-
 		<!-- start content -->
-<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
 <li class="toclevel-1 tocsection-2"><a href="#Project_Goals"><span class="tocnumber">2</span> <span class="toctext">Project Goals</span></a>
