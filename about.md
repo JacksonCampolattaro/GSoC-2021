@@ -23,6 +23,13 @@ Over the course of the project, this goal drifted for several reasons:
 - The compiler already does a passable job at vectorizing CGAL's code, 
   which limits how much improvement we can expect from further intentional vectorization.
 
+One of the primary work products that came out of my endeavor this summer was a modification to the 
+tree's approach for construction that can increase performance by as much as 50%.
+It uses a technique pioneered by Embree, 
+building the tree rapidly by sorting the items it contains along a space-filling-curve.
+The relevant pull-request is available to view [here](https://github.com/CGAL/cgal/pull/5893),
+and documentation for the feature is available [here](https://cgal.github.io/5893/v1/AABB_tree/classCGAL_1_1AABB__traits__construct__by__sorting.html).
+
 The AABB-package ultimately makes up a small fraction of CGAL's code base,
 so a major part of the value of this project is in the institutional knowledge it produced.
 As such, I documented my work thoroughly on CGAL's internal wiki;
@@ -69,11 +76,16 @@ Even more difficult is CGAL's exactness guarantees.
 CGAL can use different math kernels to retain high levels of precision,
 and to ensure that rounding errors don't propagate to create incorrect results.
 Using SIMD in exact computation could be the subject of its own research project.
-We decided that if we wanted to take advantage of SIMD we would need to find places exactness wasn't necesary.
 
 ### N-Way Tree
 
+One major difference of Embree is the topology of its AABB-tree.
+Embree provides an "N-Way Tree", where each node contains N children, rather than only 2.
+N is typically set to the size of the CPU's SIMD registers, so that intersection with all children can be done rapidly.
+
 ### Experimenting with Workarounds
+
+We decided that if we wanted to take advantage of SIMD we would need to find places exactness wasn't necessary.
 
 ### Other Techniques used by Embree
 
