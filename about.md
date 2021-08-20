@@ -15,25 +15,27 @@ so any performance improvements made to this package will pay dividends elsewher
 My original goal for this project was to incorporate SIMD into the package
 using techniques borrowed from Intel's own library [Embree](https://www.embree.org/).
 
-Over the course of the project, this goal drifted for several reasons:
-- We determined that SIMD was only one part of Embree's performance advantages,
-  if we wanted to match their performance we would need to include some other optimizations. 
-- The heavily templated & generic nature of CGAL's codebase is not as easily amenable to traditional SIMD techniques 
-  as Embree's narrower domain.
-- The compiler already does a passable job at vectorizing CGAL's code, 
-  which limits how much improvement we can expect from further intentional vectorization.
+Over the course of the project, the central goal shifted.
+The causes and effects of this shift are explained in the timeline below,
+but the end result is that most of the optimizations I've produced are only partly SIMD related.
 
 One of the primary work products that came out of my endeavor this summer was a modification to the 
 tree's approach for construction that can increase performance by as much as 50%.
 It uses a technique pioneered by Embree, 
 building the tree rapidly by sorting the items it contains along a space-filling-curve.
-The relevant pull-request is available to view [here](https://github.com/CGAL/cgal/pull/5893),
-and documentation for the feature is available [here](https://cgal.github.io/5893/v1/AABB_tree/classCGAL_1_1AABB__traits__construct__by__sorting.html).
+The relevant pull-request is available to view 
+[here](https://github.com/CGAL/cgal/pull/5893),
+and documentation for the feature is available 
+[here](https://cgal.github.io/5893/v1/AABB_tree/classCGAL_1_1AABB__traits__construct__by__sorting.html).
+
+I'm refining another optimization which uses an implicit tree structure 
+for a more compact and SIMD friendly arrangement of the data in memory.
+This may become its own pull request in the future.
 
 The AABB-package ultimately makes up a small fraction of CGAL's code base,
 so a major part of the value of this project is in the institutional knowledge it produced.
 As such, I documented my work thoroughly on CGAL's internal wiki;
-I've created a public mirror of that documentation [here](todo link to wiki mirror).
+I've created a public mirror of that documentation [here](https://jacksoncampolattaro.github.io/GSoC-2021/posts/wiki).
 
 ## Timeline
 
@@ -76,6 +78,12 @@ Even more difficult is CGAL's exactness guarantees.
 CGAL can use different math kernels to retain high levels of precision,
 and to ensure that rounding errors don't propagate to create incorrect results.
 Using SIMD in exact computation could be the subject of its own research project.
+
+This challenge caused a shift in the goal of the project, but it wasn't the only reason.
+- We determined that SIMD was only one part of Embree's performance advantages,
+  if we wanted to match their performance we would need to include some other optimizations.
+- The compiler already does a passable job at vectorizing CGAL's code,
+  which limits how much improvement we can expect from further intentional vectorization.
 
 ### N-Way Tree
 
@@ -182,7 +190,34 @@ or make the API more ergonomic with other members of the organization.
 
 ### Implicit Tree Structure
 
+I'm currently exploring another technique suggested by experts at CGAL,
+this one unrelated to Embree.
+Implicit data structures are data structures where the relationships between 
+their contents locations in memory carry implicit meaning.
+An implicit tree is one such example:
+if you structure your tree properly, 
+you can intuit its structure based only on how the nodes are arranged in a flat list.
+This can be used to save a lot of space,
+because it isn't necessary to store the connections between nodes.
 
+I've implemented a couple of versions of this, experimenting with different approaches.
+First I created one built on top of the N-way tree, 
+which provided external functions to find the children of a node.
+In this version, the nodes contained their bounding box and (optionally)
+a reference to the item they represented, if they were a leaf.
+
+A newer version takes the concept even further.
+I replaced the array of nodes with an array of bounding boxes,
+and used a "node handle" type to enable traversing the tree as usual.
+This version uses a function to map leaf nodes directly to locations in the primitive list,
+so I could remove that reference from the nodes, further shrinking them.
+
+I'm using benchmarks to see how these trees compare to one another,
+particularly when combined with the topological change I discovered when I was creating the N-way tree.
+These already provide a memory advantage, 
+but I'm hoping that because of the improved packing of their data
+I can produce a speed advantage too, with the help of SIMD.
+In the future I intend to submit another PR with these changes.
 
 > ### Rubric
 > 
