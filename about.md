@@ -136,7 +136,38 @@ checking if that query intersects with a box.
 Ultimately, if we wanted to get performance from this approach it would be necessary to find a way
 to build boxes a lot less often than we performed intersections.
 
-### Other Techniques used by Embree
+### Construction by Spatial-sorting
+
+We decided to examine another technique used by Embree: construction by Spatial Sorting.
+This is an approach I found fascinating: 
+where building a tree traditionally means recursively splitting its contents into groups,
+we can achieve a similar result by sorting the contents along a space-filling curve like the 
+[Hilbert curve](https://en.wikipedia.org/wiki/Hilbert_curve).
+This naturally puts the contents in an order such that nearby items are close together in the list,
+meaning that they can be easily and efficiently grouped into nodes.
+
+This technique is interesting because it naturally comes with a tradeoff.
+The tree can be built faster, but it tends to produce a "lower quality" tree.
+This means that the arrangement of the nodes is less optimal,
+and traversals will typically be slightly slower.
+This means that it's suitable in situations where it's important to build a tree quickly,
+or we're not using it for very many queries.
+To incorporate this into CGAL's tree, it will have to be optional.
+
+Luckily, CGAL's genericity means the AABB-tree is very modular,
+the user can easily replace or change the algorithms or data structures that underly the tree.
+Adding spatial sorting was as simple as adding a new construction algorithm for the user to choose from.
+The algorithm itself was also relatively simple to implement;
+CGAL already provides its own `hilbert_sort()`, 
+so the only challenge was to fit it into the same semantics as the other construction algorithm.
+
+Once it was working, the performance results were very exciting.
+The new algorithm made construction as much as 50% faster,
+while only making traversal around 20% slower.
+This is better than it sounds, because construction is a much more expensive process than traversal.
+Through benchmarks, we determined that this algorithm would be the best option
+unless the tree was being used for tens or hundreds of thousands of traversals,
+at which point faster traversals become worthwhile.
 
 ### Pull-Request
 
