@@ -74,7 +74,13 @@ CGAL's high level of genericity makes vectorization challenging;
 optimal vectorized code is different depending on whether the data is in the form of 
 floats or doubles, for example, but CGAL supports both.
 
-Even more difficult is CGAL's exactness guarantees. 
+I had limited success making
+[certain functions](https://github.com/JacksonCampolattaro/cgal/blob/c6f7da8764fb37746e81925bc2a9ddd3cd1191d9/Kernel_23/include/CGAL/Bbox_3.h#L191)
+more SIMD friendly,
+but for others I had trouble enabling vectorization
+[without also losing exactness](https://github.com/JacksonCampolattaro/cgal/blob/8cc8fb80c4b01b6b61eca3a593ecd5b2bc4249da/Intersections_3/include/CGAL/Intersections_3/internal/Bbox_3_Segment_3_do_intersect.h#L453).
+
+CGAL's exactness guarantees presented the biggest challenge for vectorization. 
 CGAL can use different math kernels to retain high levels of precision,
 and to ensure that rounding errors don't propagate to create incorrect results.
 Using SIMD in exact computation could be the subject of its own research project.
@@ -117,8 +123,11 @@ we used CGAL's existing interval-math capabilities.
 I worked with my mentor to devise an algorithm that could put a box around only the relevant part of the query,
 which let us use smaller boxes as we descended the tree.
 
-After further development, I had produced a prototype which fit nicely into CGAL's existing abstraction
-and provided several tunable parameters:
+After further development, I had produced a prototype which fit nicely into CGAL's existing abstraction.
+This work is visible in [another branch](https://github.com/JacksonCampolattaro/cgal/tree/boxed-queries);
+it adds a new [Boxed Query type](https://github.com/JacksonCampolattaro/cgal/blob/boxed-queries/AABB_tree/include/CGAL/internal/AABB_tree/Boxed_query.h), 
+which wraps the objects we traditionally use for traversing the tree.
+This implementation provides several tunable parameters:
 - Number of boxes that surround the query (ranging from singly boxed to many)
 - Frequency with which we shrink the box to more closely fit the query as we descend the tree
   (ranging from never, to every level, to heuristically determining when it's necessary)
@@ -168,30 +177,32 @@ Adding spatial sorting was as simple as adding a new construction algorithm for 
 The algorithm itself was also relatively simple to implement;
 CGAL already provides its own `hilbert_sort()`, 
 so the only challenge was to fit it into the same semantics as the other construction algorithm.
+This implementation was done on [yet another branch](https://github.com/JacksonCampolattaro/cgal/tree/construct-by-sorting)
+as part of [a new class](https://github.com/JacksonCampolattaro/cgal/blob/construct-by-sorting/AABB_tree/include/CGAL/AABB_traits_construct_by_sorting.h).
 
 Once it was working, the performance results were very exciting.
 The new algorithm made construction as much as 50% faster,
 while only making traversal around 20% slower.
 This is better than it sounds, because construction is a much more expensive process than traversal.
-Through benchmarks, we determined that this algorithm would be the best option
-unless the tree was being used for tens or hundreds of thousands of traversals,
+I created a [special benchmark](https://github.com/JacksonCampolattaro/cgal/blob/construct-by-sorting/AABB_tree/benchmark/AABB_tree/construction_by_sorting.cpp)
+to look at how this performance would affect real (massive) workloads.
+We determined that this algorithm would be the best option
+unless the user does tens or hundreds of thousands of traversals with the tree,
 at which point faster traversals become worthwhile.
 
 ### Pull-Request
 
 Now that I had a high-performing optimization
-I was ready to create a Pull Request and begin integrating it into the rest of CGAL.
-I already had a benchmark which could demonstrate its advantage, 
-so I began adding documentation and examples for the new code,
-which will become a part of CGAL's manual.
-CGAL's code-review process is thorough, 
-and it's given me great opportunities to discuss ways to simplify the code
+I was ready to [create a Pull Request](https://github.com/CGAL/cgal/pull/5893) 
+and begin integrating it into the rest of CGAL.
+I already had a benchmark which could demonstrate its advantage,
+so I began adding documentation and examples for the new code which will become a part of CGAL's manual.
+CGAL's code-review process is thorough,  and it's given me great opportunities to discuss ways to simplify the code
 or make the API more ergonomic with other members of the organization.
 
 ### Implicit Tree Structure
 
-I'm currently exploring another technique suggested by experts at CGAL,
-this one unrelated to Embree.
+I'm currently exploring another technique suggested by experts at CGAL, this one unrelated to Embree.
 Implicit data structures are data structures where the relationships between 
 their contents locations in memory carry implicit meaning.
 An implicit tree is one such example:
@@ -201,19 +212,25 @@ This can be used to save a lot of space,
 because it isn't necessary to store the connections between nodes.
 
 I've implemented a couple of versions of this, experimenting with different approaches.
-First I created one built on top of the N-way tree, 
+First I created one 
+[built on top of the N-way tree](https://github.com/JacksonCampolattaro/cgal/blob/implicit-tree-structure/AABB_tree/include/CGAL/internal/AABB_tree/AABB_node.h), 
 which provided external functions to find the children of a node.
 In this version, the nodes contained their bounding box and (optionally)
 a reference to the item they represented, if they were a leaf.
 
-A newer version takes the concept even further.
+A [newer version](https://github.com/JacksonCampolattaro/cgal/blob/implicit-tree-structure-2-way-splits/AABB_tree/include/CGAL/internal/AABB_tree/AABB_node.h) 
+takes the concept even further.
 I replaced the array of nodes with an array of bounding boxes,
 and used a "node handle" type to enable traversing the tree as usual.
 This version uses a function to map leaf nodes directly to locations in the primitive list,
-so I could remove that reference from the nodes, further shrinking them.
+so I was able to remove that reference from the nodes, further shrinking them.
+It also contains fewer changes to CGAL's existing solution, 
+which makes it simpler to merge in the future.
 
 I'm using benchmarks to see how these trees compare to one another,
-particularly when combined with the topological change I discovered when I was creating the N-way tree.
+with a particular interest in 
+[how they interact](https://github.com/JacksonCampolattaro/cgal/blob/implicit-tree-structure-2-way-splits-leafless/AABB_tree/include/CGAL/internal/AABB_tree/AABB_node.h)
+with the topological change I discovered when I was creating the N-way tree.
 These already provide a memory advantage, 
 but I'm hoping that because of the improved packing of their data
 I can produce a speed advantage too, with the help of SIMD.
