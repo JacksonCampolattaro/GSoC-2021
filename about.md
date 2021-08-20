@@ -93,14 +93,48 @@ my changes to the tree incidentally added bounding boxes to the leaf nodes,
 which further simplified traversal, and had a significant positive effect on performance.
 
 Unfortunately, the higher dimensionality of the tree didn't provide a positive affect without the use of SIMD.
-[todo]()
+This meant that I could produce better performance, but I wasn't able to achieve those results
+without using an algorithm that omitted CGAL's exactness guarantees.
 
-### Experimenting with Workarounds
+### Bounding-box workaround
 
 We decided that if we wanted to take advantage of SIMD we would need to find places exactness wasn't necessary.
 My mentor suggested the approach of boxing the queries:
 because intersections between bounding boxes don't require full precision, 
 they could be used to sidestep the issues that make SIMD difficult.
+If we could create a box that surrounds the query, 
+we could use that box to cheaply estimate whether the query intersected with another box.
+To find this box "conservatively" -- that is, while preserving exactness --
+we used CGAL's existing interval-math capabilities.
+I worked with my mentor to devise an algorithm that could put a box around only the relevant part of the query,
+which let us use smaller boxes as we descended the tree.
+
+After further development, I had produced a prototype which fit nicely into CGAL's existing abstraction
+and provided several tunable parameters:
+- Number of boxes that surround the query (ranging from singly boxed to many)
+- Frequency with which we shrink the box to more closely fit the query as we descend the tree
+  (ranging from never, to every level, to heuristically determining when it's necessary)
+- How reliable we expect the bbox to be at predicting if the query itself intersects
+  (either no trust, or assuming that all intersections of boxes represent real intersections)
+- Number of children per node, when using an N-way tree
+  (The cheaper bbox-bbox intersections might make wider trees worthwhile)
+  
+This is where benchmarking became a central part of our project.
+We didn't do a full grid-search of the parameters, but we did test a wide variety of combinations.
+We found some local maxima, for example in some configurations wider trees did indeed become worthwhile,
+but ultimately the ideal configurations was clear.
+We got the best performance from placing full trust in a single box around the query, 
+traversing a 2-way tree and shrinking the box according to our heuristic.
+
+Our tests showed that this approach could consistently produce a 10-20% improvement in performance,
+unfortunately refinements in our benchmark showed that 
+these improvements were limited to specific types of queries.
+Moreover, the best performance was for scenarios that are unusual in CGAL,
+and for other scenarios the performance difference was almost negligible.
+The core of this issue was that the math required to build a box around a query is similar to the math for 
+checking if that query intersects with a box.
+Ultimately, if we wanted to get performance from this approach it would be necessary to find a way
+to build boxes a lot less often than we performed intersections.
 
 ### Other Techniques used by Embree
 
