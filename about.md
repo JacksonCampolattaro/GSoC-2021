@@ -7,6 +7,7 @@ description: ""
 ---
 
 # Final Report
+**Jackson Campolattaro, 2021**
 
 CGAL’s Axis-Aligned Bounding Box Tree is an acceleration structure 
 which speeds up common tasks such as collision-detection. 
@@ -15,13 +16,13 @@ so any performance improvements made to this package will pay dividends elsewher
 My original goal for this project was to incorporate SIMD into the package
 using techniques borrowed from Intel's own library [Embree](https://www.embree.org/).
 
-Over the course of the project, the central goal shifted.
-The causes and effects of this shift are explained in the timeline below,
+Over the course of the project, the central goal shifted. 
+I explain the causes and effects of this shift in the timeline below,
 but the end result is that most of the optimizations I've produced are only partly SIMD related.
 
 One of the primary work products that came out of my endeavor this summer was a modification to the 
 tree's approach for construction that can increase performance by as much as 50%.
-It uses a technique pioneered by Embree, 
+It uses a technique used by Embree, 
 building the tree rapidly by sorting the items it contains along a space-filling-curve.
 The relevant pull-request is available to view 
 [here](https://github.com/CGAL/cgal/pull/5893),
@@ -30,7 +31,7 @@ and documentation for the feature is available
 
 I'm refining another optimization which uses an implicit tree structure 
 for a more compact and SIMD friendly arrangement of the data in memory.
-This may become its own pull request in the future.
+This will become its own pull request in the future.
 
 The AABB-package ultimately makes up a small fraction of CGAL's code base,
 so a major part of the value of this project is in the institutional knowledge it produced.
