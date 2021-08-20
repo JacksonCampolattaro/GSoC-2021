@@ -171,6 +171,19 @@ at which point faster traversals become worthwhile.
 
 ### Pull-Request
 
+Now that I had a high-performing optimization
+I was ready to create a Pull Request and begin integrating it into the rest of CGAL.
+I already had a benchmark which could demonstrate its advantage, 
+so I began adding documentation and examples for the new code,
+which will become a part of CGAL's manual.
+CGAL's code-review process is thorough, 
+and it's given me great opportunities to discuss ways to simplify the code
+or make the API more ergonomic with other members of the organization.
+
+### Implicit Tree Structure
+
+
+
 > ### Rubric
 > 
 > The target of the link should contain: 
