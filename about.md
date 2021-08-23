@@ -28,6 +28,7 @@ The relevant pull-request is available to view
 [here](https://github.com/CGAL/cgal/pull/5893),
 and documentation for the feature is available 
 [here](https://cgal.github.io/5893/v1/AABB_tree/classCGAL_1_1AABB__traits__construct__by__sorting.html).
+A list of the relevant commits for this PR is also available [here](https://github.com/CGAL/cgal/issues/5927).
 
 I'm refining another optimization which uses an implicit tree structure 
 for a more compact and SIMD friendly arrangement of the data in memory.
