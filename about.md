@@ -237,13 +237,3 @@ These already provide a memory advantage,
 but I'm hoping that because of the improved packing of their data
 I can produce a speed advantage too, with the help of SIMD.
 In the future I intend to submit another PR with these changes.
-
-> ### Rubric
-> 
-> The target of the link should contain: 
-> - a short description of what work was done, 
-> - what code got merged, 
-> - what code didn't get merged, 
-> - what's left to do
-> 
-> The best examples of this we saw in past years were "final reports" that made it easy to find the code, summarized the current state of the project, and enumerated challenges and learnings
